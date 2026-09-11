@@ -2,585 +2,2250 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Veeresh Avanti | QA Engineer Portfolio</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <meta name="description"
-        content="Veeresh Avanti - QA Engineer specializing in Manual Testing, API Testing, Automation Testing, Performance Testing and Security Testing.">
+    <meta
+        name="description"
+        content="Veeresh Avanti — QA Engineer specializing in Manual Testing, API Testing, Automation Testing, Performance Testing and Security Testing."
+    >
 
+    <meta
+        name="keywords"
+        content="Veeresh Avanti, QA Engineer, Software Testing, API Testing, Postman, JMeter, Playwright, Appium, Selenium, OWASP ZAP"
+    >
+
+    <meta name="author" content="Veeresh Avanti">
+
+    <title>Veeresh Avanti | QA Engineer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Icons -->
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <header class="navbar">
-        <div class="container nav-container">
+    <!-- =========================================================
+         CUSTOM CURSOR
+    ========================================================== -->
 
-            <div class="logo">
-                Veeresh Avanti
-            </div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
 
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#certification">Certification</a>
-                <a href="#contact">Contact</a>
+
+    <!-- =========================================================
+         BACKGROUND
+    ========================================================== -->
+
+    <div class="site-background">
+
+        <div class="background-grid"></div>
+
+        <div class="background-glow glow-one"></div>
+        <div class="background-glow glow-two"></div>
+
+    </div>
+
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
+
+    <header class="site-header">
+
+        <div class="nav-container">
+
+            <a href="#home" class="logo">
+                <span class="logo-mark">VA</span>
+                <span class="logo-name">VEERESH<span>.</span></span>
+            </a>
+
+
+            <nav class="desktop-nav">
+
+                <a href="#home" class="nav-link active">
+                    <span>01</span>
+                    Home
+                </a>
+
+                <a href="#about" class="nav-link">
+                    <span>02</span>
+                    About
+                </a>
+
+                <a href="#skills" class="nav-link">
+                    <span>03</span>
+                    Skills
+                </a>
+
+                <a href="#projects" class="nav-link">
+                    <span>04</span>
+                    Projects
+                </a>
+
+                <a href="#labs" class="nav-link">
+                    <span>05</span>
+                    QA Labs
+                </a>
+
+                <a href="#certification" class="nav-link">
+                    <span>06</span>
+                    Certification
+                </a>
+
+                <a href="#contact" class="nav-link">
+                    <span>07</span>
+                    Contact
+                </a>
+
             </nav>
 
+
+            <button
+                class="mobile-menu-button"
+                aria-label="Open navigation"
+            >
+                <i data-lucide="menu"></i>
+            </button>
+
         </div>
+
     </header>
 
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <!-- =========================================================
+         MOBILE NAVIGATION
+    ========================================================== -->
 
-        <div class="container hero-content">
+    <div class="mobile-nav">
 
-            <div class="hero-text">
+        <button class="mobile-close" aria-label="Close navigation">
+            <i data-lucide="x"></i>
+        </button>
 
-                <p class="intro">Hello, I'm</p>
+        <a href="#home">01 — Home</a>
+        <a href="#about">02 — About</a>
+        <a href="#skills">03 — Skills</a>
+        <a href="#projects">04 — Projects</a>
+        <a href="#labs">05 — QA Labs</a>
+        <a href="#certification">06 — Certification</a>
+        <a href="#contact">07 — Contact</a>
 
-                <h1>Veeresh Avanti</h1>
-
-                <h2>QA Engineer</h2>
-
-                <p class="hero-description">
-                    Software Testing professional focused on delivering
-                    reliable, secure and high-quality software through
-                    Manual Testing, API Testing, Automation Testing,
-                    Performance Testing and Security Testing.
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn primary-btn">
-                        View My Work
-                    </a>
-
-                    <a href="#contact" class="btn secondary-btn">
-                        Contact Me
-                    </a>
-                </div>
-
-            </div>
+    </div>
 
 
-            <div class="hero-image">
-
-                <div class="profile-ring">
-                    <img src="images/profile.jpg" alt="Veeresh Avanti - QA Engineer">
-                         
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
+    <main>
 
 
-    <!-- About Section -->
-    <section id="about" class="section">
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
 
-        <div class="container">
+        <section id="home" class="hero section">
 
-            <div class="section-heading">
-                <p>ABOUT ME</p>
-                <h2>Quality-Focused QA Engineer</h2>
-            </div>
+            <div class="container hero-container">
 
-            <div class="about-content">
+                <div class="hero-content">
 
-                <div class="about-text">
+                    <div class="eyebrow reveal">
 
-                    <p>
-                        I am a QA Engineer with hands-on experience in
-                        software testing across web applications,
-                        mobile applications and APIs.
-                    </p>
+                        <span class="status-indicator"></span>
 
-                    <p>
-                        My testing experience includes functional testing,
-                        API testing, security testing, performance testing
-                        and automation testing.
-                    </p>
+                        AVAILABLE FOR QA OPPORTUNITIES
 
-                    <p>
-                        I work with tools such as Postman, JMeter,
-                        OWASP ZAP, Playwright, Appium and Selenium to
-                        identify defects, validate application behaviour
-                        and improve software quality.
-                    </p>
-
-                </div>
-
-
-                <div class="about-card">
-
-                    <div class="info-item">
-                        <span>Role</span>
-                        <strong>QA Engineer</strong>
                     </div>
 
-                    <div class="info-item">
-                        <span>Specialization</span>
-                        <strong>Software Testing</strong>
+
+                    <p class="hero-kicker reveal">
+                        SOFTWARE QUALITY ENGINEER
+                    </p>
+
+
+                    <h1 class="hero-title reveal">
+
+                        Veeresh
+                        <span>Avanti</span>
+
+                    </h1>
+
+
+                    <div class="hero-role reveal">
+
+                        <span class="terminal-symbol">&gt;_</span>
+
+                        <span id="typing-text">
+                            QA Engineer
+                        </span>
+
+                        <span class="typing-cursor">_</span>
+
                     </div>
 
-                    <div class="info-item">
-                        <span>Automation</span>
-                        <strong>Playwright & Appium</strong>
+
+                    <p class="hero-description reveal">
+
+                        I test software from the user's perspective,
+                        the system's perspective and the attacker's perspective —
+                        with a focus on reliability, security and performance.
+
+                    </p>
+
+
+                    <div class="hero-actions reveal">
+
+                        <a
+                            href="#projects"
+                            class="button button-primary"
+                        >
+
+                            <span>Explore My Work</span>
+
+                            <i data-lucide="arrow-up-right"></i>
+
+                        </a>
+
+
+                        <a
+                            href="#contact"
+                            class="button button-secondary"
+                        >
+
+                            <span>Let's Connect</span>
+
+                            <i data-lucide="mail"></i>
+
+                        </a>
+
                     </div>
 
-                    <div class="info-item">
-                        <span>API Testing</span>
-                        <strong>Postman</strong>
-                    </div>
 
-                    <div class="info-item">
-                        <span>Performance</span>
-                        <strong>JMeter</strong>
-                    </div>
+                    <div class="hero-meta reveal">
 
-                </div>
+                        <div class="meta-item">
 
-            </div>
+                            <span class="meta-number">05+</span>
 
-        </div>
+                            <span class="meta-label">
+                                Testing Areas
+                            </span>
 
-    </section>
+                        </div>
 
 
-    <!-- Skills Section -->
-    <section id="skills" class="section skills-section">
-
-        <div class="container">
-
-            <div class="section-heading">
-                <p>TECHNICAL SKILLS</p>
-                <h2>Tools & Technologies</h2>
-            </div>
+                        <div class="meta-divider"></div>
 
 
-            <div class="skills-grid">
+                        <div class="meta-item">
 
-                <div class="skill-card">
-                    <div class="skill-number">01</div>
-                    <h3>Manual Testing</h3>
-                    <p>
-                        Functional, regression, smoke,
-                        sanity and exploratory testing.
-                    </p>
-                </div>
+                            <span class="meta-number">09+</span>
 
+                            <span class="meta-label">
+                                Testing Tools
+                            </span>
 
-                <div class="skill-card">
-                    <div class="skill-number">02</div>
-                    <h3>API Testing</h3>
-                    <p>
-                        REST API testing using Postman,
-                        JWT validation and response validation.
-                    </p>
-                </div>
+                        </div>
 
 
-                <div class="skill-card">
-                    <div class="skill-number">03</div>
-                    <h3>Automation Testing</h3>
-                    <p>
-                        Web and mobile automation using
-                        Playwright and Appium.
-                    </p>
-                </div>
+                        <div class="meta-divider"></div>
 
 
-                <div class="skill-card">
-                    <div class="skill-number">04</div>
-                    <h3>Performance Testing</h3>
-                    <p>
-                        Load and performance testing using
-                        Apache JMeter.
-                    </p>
-                </div>
+                        <div class="meta-item">
 
+                            <span class="meta-number">04</span>
 
-                <div class="skill-card">
-                    <div class="skill-number">05</div>
-                    <h3>Security Testing</h3>
-                    <p>
-                        Web security testing and vulnerability
-                        assessment using OWASP ZAP.
-                    </p>
-                </div>
+                            <span class="meta-label">
+                                Major Projects
+                            </span>
 
+                        </div>
 
-                <div class="skill-card">
-                    <div class="skill-number">06</div>
-                    <h3>Database Testing</h3>
-                    <p>
-                        Basic SQL knowledge for data validation
-                        and database testing.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="technology-list">
-
-                <span>Postman</span>
-                <span>JMeter</span>
-                <span>Playwright</span>
-                <span>Appium</span>
-                <span>Selenium</span>
-                <span>OWASP ZAP</span>
-                <span>SQL</span>
-                <span>Git</span>
-                <span>Java</span>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-
-        <div class="container">
-
-            <div class="section-heading">
-                <p>PROJECT EXPERIENCE</p>
-                <h2>Testing Projects</h2>
-            </div>
-
-
-            <div class="projects-grid">
-
-
-                <!-- Project 1 -->
-                <div class="project-card">
-
-                    <div class="project-top">
-                        <span class="project-tag">LOGISTICS</span>
-                    </div>
-
-                    <h3>Nikkou Porter</h3>
-
-                    <p>
-                        Logistics and parcel delivery platform
-                        consisting of Customer, Driver and Admin
-                        applications.
-                    </p>
-
-                    <ul>
-                        <li>Functional & API Testing</li>
-                        <li>Performance Testing using JMeter</li>
-                        <li>Security Testing using OWASP ZAP</li>
-                        <li>Payment & wallet flow validation</li>
-                        <li>Role-based access testing</li>
-                    </ul>
-
-                    <div class="project-tools">
-                        <span>Postman</span>
-                        <span>JMeter</span>
-                        <span>ZAP</span>
                     </div>
 
                 </div>
 
 
-                <!-- Project 2 -->
-                <div class="project-card">
+                <!-- HERO PROFILE -->
 
-                    <div class="project-top">
-                        <span class="project-tag">SPORTS PLATFORM</span>
+                <div class="hero-visual reveal">
+
+                    <div class="profile-orbit orbit-one"></div>
+                    <div class="profile-orbit orbit-two"></div>
+
+
+                    <div class="profile-card">
+
+                        <div class="profile-card-top">
+
+                            <span class="profile-card-label">
+                                QA ENGINEER
+                            </span>
+
+                            <span class="profile-card-status">
+                                <span class="status-dot"></span>
+                                ONLINE
+                            </span>
+
+                        </div>
+
+
+                        <div class="profile-image-wrapper">
+
+                            <div class="profile-image-ring">
+
+                                <img
+                                    src="images/profile.jpg"
+                                    alt="Veeresh Avanti - QA Engineer"
+                                    class="profile-image"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="profile-card-bottom">
+
+                            <div>
+                                <span class="profile-location-label">
+                                    BASE
+                                </span>
+
+                                <span class="profile-location">
+                                    Bengaluru, India
+                                </span>
+                            </div>
+
+
+                            <div class="profile-code">
+                                QA_01
+                            </div>
+
+                        </div>
+
                     </div>
 
-                    <h3>Master My Sports</h3>
 
-                    <p>
-                        Sports technology platform supporting
-                        venues, coaches, referees, academies,
-                        clubs and sports bookings.
-                    </p>
+                    <!-- Floating QA Tags -->
 
-                    <ul>
-                        <li>Web & Mobile Application Testing</li>
-                        <li>API Testing</li>
-                        <li>Role-based access testing</li>
-                        <li>Security testing</li>
-                        <li>Validation & usability testing</li>
-                    </ul>
+                    <div class="floating-tag tag-api">
 
-                    <div class="project-tools">
-                        <span>Postman</span>
-                        <span>ZAP</span>
-                        <span>Appium</span>
+                        <i data-lucide="send"></i>
+
+                        <span>API TESTING</span>
+
                     </div>
 
-                </div>
 
+                    <div class="floating-tag tag-security">
 
-                <!-- Project 3 -->
-                <div class="project-card">
+                        <i data-lucide="shield-check"></i>
 
-                    <div class="project-top">
-                        <span class="project-tag">MOBILE APPLICATION</span>
+                        <span>SECURITY</span>
+
                     </div>
 
-                    <h3>Cherry Salon</h3>
 
-                    <p>
-                        Salon discovery and booking application
-                        allowing users to find salons and book
-                        available services.
-                    </p>
+                    <div class="floating-tag tag-performance">
 
-                    <ul>
-                        <li>Mobile application testing</li>
-                        <li>Booking flow validation</li>
-                        <li>Map functionality testing</li>
-                        <li>Service & pricing validation</li>
-                        <li>Cross-platform testing</li>
-                    </ul>
+                        <i data-lucide="gauge"></i>
 
-                    <div class="project-tools">
-                        <span>Manual Testing</span>
-                        <span>API Testing</span>
-                        <span>Appium</span>
-                    </div>
+                        <span>PERFORMANCE</span>
 
-                </div>
-
-
-                <!-- Project 4 -->
-                <div class="project-card">
-
-                    <div class="project-top">
-                        <span class="project-tag">API & PERFORMANCE</span>
-                    </div>
-
-                    <h3>API Performance Testing</h3>
-
-                    <p>
-                        Performance testing of critical application
-                        APIs to evaluate response time, stability
-                        and behaviour under concurrent load.
-                    </p>
-
-                    <ul>
-                        <li>Login API testing</li>
-                        <li>Order API testing</li>
-                        <li>Driver assignment API testing</li>
-                        <li>Load testing</li>
-                        <li>Response-time analysis</li>
-                    </ul>
-
-                    <div class="project-tools">
-                        <span>JMeter</span>
-                        <span>Postman</span>
                     </div>
 
                 </div>
 
             </div>
 
-        </div>
 
-    </section>
+            <div class="scroll-indicator">
 
+                <span>SCROLL TO EXPLORE</span>
 
-    <!-- Testing Expertise -->
-    <section class="section testing-section">
-
-        <div class="container">
-
-            <div class="section-heading">
-                <p>TESTING EXPERTISE</p>
-                <h2>What I Test</h2>
-            </div>
-
-
-            <div class="testing-grid">
-
-                <div>
-                    <h3>Functional Testing</h3>
-                    <p>
-                        Validating application functionality
-                        against business requirements.
-                    </p>
-                </div>
-
-                <div>
-                    <h3>API Testing</h3>
-                    <p>
-                        Validating API requests, responses,
-                        authentication and authorization.
-                    </p>
-                </div>
-
-                <div>
-                    <h3>Security Testing</h3>
-                    <p>
-                        Testing authentication, authorization,
-                        tokens, input validation and common
-                        web security issues.
-                    </p>
-                </div>
-
-                <div>
-                    <h3>Performance Testing</h3>
-                    <p>
-                        Analysing application behaviour under
-                        different levels of concurrent load.
-                    </p>
-                </div>
+                <div class="scroll-line"></div>
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- Certification -->
-    <section id="certification" class="section">
+        <!-- =====================================================
+             QUALITY STATUS BAR
+        ====================================================== -->
 
-        <div class="container">
+        <section class="quality-strip">
 
-            <div class="section-heading">
-                <p>CERTIFICATION</p>
-                <h2>Professional Training</h2>
-            </div>
+            <div class="container">
 
+                <div class="quality-strip-inner">
 
-            <div class="certificate-container">
+                    <div class="quality-label">
 
-                <div class="certificate-image">
+                        <span class="pulse-dot"></span>
 
-                    <img src="images/Veeresh%20Avanti_emertxe_certificate.png" alt="Emertxe Certified Embedded Professional Certificate">
-                         alt="Emertxe Certified Embedded Professional Certificate">
+                        QUALITY SYSTEM
 
-                </div>
+                    </div>
 
 
-                <div class="certificate-details">
+                    <div class="quality-status">
 
-                    <span class="certificate-label">
-                        CERTIFICATE OF COMPLETION
-                    </span>
+                        <span>
+                            <b>WEB</b>
+                            <em>TESTED</em>
+                        </span>
 
-                    <h3>
-                        Emertxe Certified Embedded Professional
-                        (ECEP)
-                    </h3>
+                        <span>
+                            <b>API</b>
+                            <em>VERIFIED</em>
+                        </span>
 
-                    <p>
-                        Completed hands-on technical training in
-                        Embedded Systems at Emertxe Information
-                        Technologies.
-                    </p>
+                        <span>
+                            <b>MOBILE</b>
+                            <em>TESTED</em>
+                        </span>
 
-                    <p>
-                        Training Period:
-                        <strong>
-                            27 June 2023 – 26 March 2024
-                        </strong>
-                    </p>
+                        <span>
+                            <b>SECURITY</b>
+                            <em>SCANNED</em>
+                        </span>
 
-                    <p>
-                        This training provided practical exposure
-                        to embedded systems and technical development.
-                    </p>
+                        <span>
+                            <b>PERFORMANCE</b>
+                            <em>ANALYZED</em>
+                        </span>
+
+                    </div>
 
                 </div>
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- Contact -->
-    <section id="contact" class="section contact-section">
+        <!-- =====================================================
+             ABOUT
+        ====================================================== -->
 
-        <div class="container">
+        <section id="about" class="section about-section">
 
-            <div class="section-heading">
-                <p>CONTACT</p>
-                <h2>Let's Connect</h2>
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-number">02</span>
+
+                    <div>
+
+                        <p class="section-eyebrow">
+                            ABOUT ME
+                        </p>
+
+                        <h2>
+                            Quality is not a final step.
+                            <span>It is a mindset.</span>
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-grid">
+
+                    <div class="about-main reveal">
+
+                        <p class="large-text">
+
+                            I am a QA Engineer focused on finding defects
+                            before they reach the user and helping teams
+                            deliver software that is reliable, secure and
+                            production-ready.
+
+                        </p>
+
+
+                        <p>
+
+                            My testing approach combines manual testing,
+                            API validation, mobile testing, automation,
+                            performance testing and security testing.
+
+                        </p>
+
+
+                        <p>
+
+                            I enjoy understanding how a system works,
+                            identifying its risks and designing test scenarios
+                            that challenge both expected and unexpected
+                            behaviour.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="about-console reveal">
+
+                        <div class="console-header">
+
+                            <span>qa_profile.sh</span>
+
+                            <div class="console-controls">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="console-body">
+
+                            <p>
+                                <span class="console-green">
+                                    $
+                                </span>
+                                ./run-profile
+                            </p>
+
+                            <p class="console-output">
+                                Initializing QA profile...
+                            </p>
+
+                            <p class="console-output">
+                                Loading testing capabilities...
+                            </p>
+
+                            <p class="console-output">
+                                Risk analysis engine: READY
+                            </p>
+
+                            <p class="console-output">
+                                Defect detection mindset: ACTIVE
+                            </p>
+
+                            <p class="console-success">
+                                ✓ PROFILE LOADED SUCCESSFULLY
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
 
+        </section>
 
-            <div class="contact-content">
 
-                <div class="contact-text">
+        <!-- =====================================================
+             TESTING MINDSET
+        ====================================================== -->
 
-                    <h3>
-                        Looking for a QA Engineer?
-                    </h3>
+        <section class="mindset-section section">
 
-                    <p>
-                        I am interested in opportunities where I can
-                        contribute to software quality while continuing
-                        to grow in automation, API, performance and
-                        security testing.
+            <div class="container">
+
+                <div class="mindset-header reveal">
+
+                    <p class="section-eyebrow">
+                        HOW I THINK
                     </p>
 
+                    <h2>
+                        Don't just test the
+                        <span>happy path.</span>
+                    </h2>
+
                 </div>
 
 
-                <div class="contact-details">
+                <div class="testing-flow reveal">
 
-                    <a href="mailto:veereshavanti19@gmail.com">
-                        <span>Email</span>
-                        veereshavanti19@gmail.com
-                    </a>
+                    <div class="flow-step">
 
-                    <a href="tel:+917338483441">
-                        <span>Phone</span>
-                        +91 73384 84341
-                    </a>
+                        <span class="flow-number">01</span>
 
-                    <a href="https://www.linkedin.com/in/veeresh-avanti-590282283/"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        <span>LinkedIn</span>
-                        View LinkedIn Profile
-                    </a>
+                        <i data-lucide="search"></i>
+
+                        <h3>UNDERSTAND</h3>
+
+                        <p>
+                            Requirements, users and business rules.
+                        </p>
+
+                    </div>
+
+
+                    <div class="flow-arrow">
+                        →
+                    </div>
+
+
+                    <div class="flow-step">
+
+                        <span class="flow-number">02</span>
+
+                        <i data-lucide="brain"></i>
+
+                        <h3>ANALYZE</h3>
+
+                        <p>
+                            Risks, dependencies and edge cases.
+                        </p>
+
+                    </div>
+
+
+                    <div class="flow-arrow">
+                        →
+                    </div>
+
+
+                    <div class="flow-step">
+
+                        <span class="flow-number">03</span>
+
+                        <i data-lucide="flask-conical"></i>
+
+                        <h3>TEST</h3>
+
+                        <p>
+                            Functional, API, mobile and system behaviour.
+                        </p>
+
+                    </div>
+
+
+                    <div class="flow-arrow">
+                        →
+                    </div>
+
+
+                    <div class="flow-step">
+
+                        <span class="flow-number">04</span>
+
+                        <i data-lucide="bug"></i>
+
+                        <h3>BREAK</h3>
+
+                        <p>
+                            Find unexpected behaviour before users do.
+                        </p>
+
+                    </div>
+
+
+                    <div class="flow-arrow">
+                        →
+                    </div>
+
+
+                    <div class="flow-step">
+
+                        <span class="flow-number">05</span>
+
+                        <i data-lucide="check-check"></i>
+
+                        <h3>VERIFY</h3>
+
+                        <p>
+                            Fix validation, regression and final quality.
+                        </p>
+
+                    </div>
 
                 </div>
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- Footer -->
-    <footer>
+        <!-- =====================================================
+             SKILLS
+        ====================================================== -->
 
-        <div class="container footer-content">
+        <section id="skills" class="section skills-section">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-number">03</span>
+
+                    <div>
+
+                        <p class="section-eyebrow">
+                            TESTING ARSENAL
+                        </p>
+
+                        <h2>
+                            Tools are useful.
+                            <span>Knowing when to use them matters more.</span>
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="skills-grid">
+
+
+                    <!-- MANUAL -->
+
+                    <article class="skill-card reveal">
+
+                        <div class="skill-card-number">
+                            01
+                        </div>
+
+                        <div class="skill-icon">
+                            <i data-lucide="clipboard-check"></i>
+                        </div>
+
+                        <h3>
+                            Manual Testing
+                        </h3>
+
+                        <p>
+                            Structured testing across functional and
+                            non-functional scenarios.
+                        </p>
+
+                        <div class="skill-tags">
+
+                            <span>Functional</span>
+                            <span>Regression</span>
+                            <span>Smoke</span>
+                            <span>Sanity</span>
+                            <span>Exploratory</span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- API -->
+
+                    <article class="skill-card reveal">
+
+                        <div class="skill-card-number">
+                            02
+                        </div>
+
+                        <div class="skill-icon">
+                            <i data-lucide="send"></i>
+                        </div>
+
+                        <h3>
+                            API Testing
+                        </h3>
+
+                        <p>
+                            Validating API behaviour, responses,
+                            authorization and business logic.
+                        </p>
+
+                        <div class="skill-tags">
+
+                            <span>REST</span>
+                            <span>Postman</span>
+                            <span>JWT</span>
+                            <span>Assertions</span>
+                            <span>RBAC</span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- AUTOMATION -->
+
+                    <article class="skill-card reveal">
+
+                        <div class="skill-card-number">
+                            03
+                        </div>
+
+                        <div class="skill-icon">
+                            <i data-lucide="bot"></i>
+                        </div>
+
+                        <h3>
+                            Automation
+                        </h3>
+
+                        <p>
+                            Automating repeatable user flows and
+                            regression scenarios.
+                        </p>
+
+                        <div class="skill-tags">
+
+                            <span>Playwright</span>
+                            <span>Appium</span>
+                            <span>Selenium</span>
+                            <span>Java</span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PERFORMANCE -->
+
+                    <article class="skill-card reveal">
+
+                        <div class="skill-card-number">
+                            04
+                        </div>
+
+                        <div class="skill-icon">
+                            <i data-lucide="gauge"></i>
+                        </div>
+
+                        <h3>
+                            Performance
+                        </h3>
+
+                        <p>
+                            Measuring application behaviour under
+                            concurrent load.
+                        </p>
+
+                        <div class="skill-tags">
+
+                            <span>JMeter</span>
+                            <span>Load Testing</span>
+                            <span>Stress Testing</span>
+                            <span>Response Time</span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- SECURITY -->
+
+                    <article class="skill-card reveal">
+
+                        <div class="skill-card-number">
+                            05
+                        </div>
+
+                        <div class="skill-icon">
+                            <i data-lucide="shield-check"></i>
+                        </div>
+
+                        <h3>
+                            Security Testing
+                        </h3>
+
+                        <p>
+                            Identifying common security weaknesses
+                            and authorization issues.
+                        </p>
+
+                        <div class="skill-tags">
+
+                            <span>OWASP ZAP</span>
+                            <span>JWT</span>
+                            <span>CORS</span>
+                            <span>RBAC</span>
+                            <span>Validation</span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- DATABASE -->
+
+                    <article class="skill-card reveal">
+
+                        <div class="skill-card-number">
+                            06
+                        </div>
+
+                        <div class="skill-icon">
+                            <i data-lucide="database"></i>
+                        </div>
+
+                        <h3>
+                            Database & Tools
+                        </h3>
+
+                        <p>
+                            Supporting testing through data validation,
+                            source control and development tools.
+                        </p>
+
+                        <div class="skill-tags">
+
+                            <span>SQL</span>
+                            <span>Git</span>
+                            <span>GitHub</span>
+                            <span>Android Studio</span>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PROJECTS
+        ====================================================== -->
+
+        <section id="projects" class="section projects-section">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-number">04</span>
+
+                    <div>
+
+                        <p class="section-eyebrow">
+                            SELECTED WORK
+                        </p>
+
+                        <h2>
+                            Systems I've
+                            <span>tested.</span>
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROJECT 01 -->
+
+                <article class="project-card project-featured reveal">
+
+                    <div class="project-index">
+                        01
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-top">
+
+                            <span class="project-category">
+                                LOGISTICS / DELIVERY
+                            </span>
+
+                            <span class="project-status">
+                                TESTED
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+                            NIKKOU PORTER
+                        </h3>
+
+
+                        <p class="project-description">
+
+                            Logistics and parcel delivery ecosystem
+                            consisting of Customer, Driver and Admin
+                            applications.
+
+                        </p>
+
+
+                        <div class="project-testing">
+
+                            <span>Functional Testing</span>
+                            <span>API Testing</span>
+                            <span>Performance Testing</span>
+                            <span>Security Testing</span>
+                            <span>RBAC</span>
+                            <span>Payment Testing</span>
+
+                        </div>
+
+
+                        <div class="project-tools">
+
+                            <span>Postman</span>
+                            <span>JMeter</span>
+                            <span>OWASP ZAP</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-visual">
+
+                        <div class="project-console">
+
+                            <div class="console-header">
+
+                                <span>
+                                    nikkou_quality_check
+                                </span>
+
+                                <span class="console-live">
+                                    LIVE
+                                </span>
+
+                            </div>
+
+
+                            <div class="console-body">
+
+                                <p>
+                                    <span class="console-green">
+                                        ✓
+                                    </span>
+                                    CUSTOMER FLOW
+                                </p>
+
+                                <p>
+                                    <span class="console-green">
+                                        ✓
+                                    </span>
+                                    DRIVER FLOW
+                                </p>
+
+                                <p>
+                                    <span class="console-green">
+                                        ✓
+                                    </span>
+                                    ADMIN RBAC
+                                </p>
+
+                                <p>
+                                    <span class="console-green">
+                                        ✓
+                                    </span>
+                                    PAYMENT FLOW
+                                </p>
+
+                                <p>
+                                    <span class="console-green">
+                                        ✓
+                                    </span>
+                                    API VALIDATION
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 02 -->
+
+                <article class="project-card reveal">
+
+                    <div class="project-index">
+                        02
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-top">
+
+                            <span class="project-category">
+                                SPORTS TECHNOLOGY
+                            </span>
+
+                            <span class="project-status">
+                                TESTED
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+                            MASTER MY SPORTS
+                        </h3>
+
+
+                        <p class="project-description">
+
+                            Sports technology platform covering
+                            venues, coaches, referees, academies,
+                            clubs, tournaments and bookings.
+
+                        </p>
+
+
+                        <div class="project-testing">
+
+                            <span>Web Testing</span>
+                            <span>Mobile Testing</span>
+                            <span>API Testing</span>
+                            <span>RBAC</span>
+                            <span>Security</span>
+                            <span>Usability</span>
+
+                        </div>
+
+
+                        <div class="project-tools">
+
+                            <span>Postman</span>
+                            <span>OWASP ZAP</span>
+                            <span>Appium</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-number-large">
+                        MMS
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 03 -->
+
+                <article class="project-card reveal">
+
+                    <div class="project-index">
+                        03
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-top">
+
+                            <span class="project-category">
+                                MOBILE APPLICATION
+                            </span>
+
+                            <span class="project-status">
+                                TESTED
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+                            CHERRY SALON
+                        </h3>
+
+
+                        <p class="project-description">
+
+                            Salon discovery and booking application
+                            with location-based salon listings,
+                            services, pricing and booking workflows.
+
+                        </p>
+
+
+                        <div class="project-testing">
+
+                            <span>Booking Flow</span>
+                            <span>Maps</span>
+                            <span>Pricing</span>
+                            <span>Functional</span>
+                            <span>Cross Platform</span>
+
+                        </div>
+
+
+                        <div class="project-tools">
+
+                            <span>App Testing</span>
+                            <span>API Testing</span>
+                            <span>Manual Testing</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-number-large">
+                        CS
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 04 -->
+
+                <article class="project-card project-performance reveal">
+
+                    <div class="project-index">
+                        04
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-top">
+
+                            <span class="project-category">
+                                PERFORMANCE ENGINEERING
+                            </span>
+
+                            <span class="project-status">
+                                ANALYZED
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+                            API PERFORMANCE TESTING
+                        </h3>
+
+
+                        <p class="project-description">
+
+                            Load testing and response-time analysis
+                            for Login, Order and Driver Assignment APIs.
+
+                        </p>
+
+
+                        <div class="api-flow">
+
+                            <span>LOGIN</span>
+
+                            <i data-lucide="arrow-right"></i>
+
+                            <span>ORDER</span>
+
+                            <i data-lucide="arrow-right"></i>
+
+                            <span>DRIVER</span>
+
+                        </div>
+
+
+                        <div class="project-tools">
+
+                            <span>JMeter</span>
+                            <span>Load Testing</span>
+                            <span>Response Analysis</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="performance-mini-chart">
+
+                        <div class="chart-label">
+                            RESPONSE TIME
+                        </div>
+
+                        <div class="chart-bars">
+
+                            <span style="height:35%"></span>
+                            <span style="height:48%"></span>
+                            <span style="height:42%"></span>
+                            <span style="height:65%"></span>
+                            <span style="height:54%"></span>
+                            <span style="height:78%"></span>
+                            <span style="height:60%"></span>
+                            <span style="height:88%"></span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             QA LABS
+        ====================================================== -->
+
+        <section id="labs" class="section labs-section">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-number">05</span>
+
+                    <div>
+
+                        <p class="section-eyebrow">
+                            QUALITY LAB
+                        </p>
+
+                        <h2>
+                            Testing beyond
+                            <span>the checklist.</span>
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- API LAB -->
+
+                <div class="lab-card reveal">
+
+                    <div class="lab-header">
+
+                        <div>
+
+                            <span class="lab-label">
+                                LAB / 01
+                            </span>
+
+                            <h3>
+                                API VALIDATION
+                            </h3>
+
+                        </div>
+
+                        <i data-lucide="terminal"></i>
+
+                    </div>
+
+
+                    <div class="api-terminal">
+
+                        <div class="terminal-top">
+
+                            <span>
+                                api_test_console
+                            </span>
+
+                            <span class="terminal-status">
+                                ● RUNNING
+                            </span>
+
+                        </div>
+
+
+                        <div class="terminal-content">
+
+                            <div class="request-line">
+
+                                <span class="method">
+                                    POST
+                                </span>
+
+                                <span>
+                                    /api/login
+                                </span>
+
+                            </div>
+
+
+                            <div class="terminal-row">
+
+                                <span>
+                                    Status Code
+                                </span>
+
+                                <strong>
+                                    200 OK
+                                </strong>
+
+                            </div>
+
+
+                            <div class="terminal-row">
+
+                                <span>
+                                    Response
+                                </span>
+
+                                <strong>
+                                    VALID
+                                </strong>
+
+                            </div>
+
+
+                            <div class="terminal-row">
+
+                                <span>
+                                    JWT
+                                </span>
+
+                                <strong>
+                                    VERIFIED
+                                </strong>
+
+                            </div>
+
+
+                            <div class="terminal-row">
+
+                                <span>
+                                    Authorization
+                                </span>
+
+                                <strong>
+                                    PASSED
+                                </strong>
+
+                            </div>
+
+
+                            <div class="terminal-row">
+
+                                <span>
+                                    Response Time
+                                </span>
+
+                                <strong>
+                                    184 ms
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SECURITY LAB -->
+
+                <div class="lab-card security-lab reveal">
+
+                    <div class="lab-header">
+
+                        <div>
+
+                            <span class="lab-label">
+                                LAB / 02
+                            </span>
+
+                            <h3>
+                                SECURITY SCAN
+                            </h3>
+
+                        </div>
+
+                        <i data-lucide="shield"></i>
+
+                    </div>
+
+
+                    <div class="security-grid">
+
+                        <div class="security-check">
+
+                            <span class="security-icon">
+                                ✓
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    JWT SECURITY
+                                </strong>
+
+                                <small>
+                                    VERIFIED
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="security-check">
+
+                            <span class="security-icon">
+                                ✓
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    RBAC
+                                </strong>
+
+                                <small>
+                                    TESTED
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="security-check">
+
+                            <span class="security-icon">
+                                ✓
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    CORS
+                                </strong>
+
+                                <small>
+                                    ANALYZED
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="security-check">
+
+                            <span class="security-icon">
+                                ✓
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    INPUT VALIDATION
+                                </strong>
+
+                                <small>
+                                    TESTED
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="security-check">
+
+                            <span class="security-icon">
+                                ✓
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    RATE LIMITING
+                                </strong>
+
+                                <small>
+                                    TESTED
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="security-check">
+
+                            <span class="security-icon">
+                                ✓
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    AUTHORIZATION
+                                </strong>
+
+                                <small>
+                                    VERIFIED
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PERFORMANCE LAB -->
+
+                <div class="lab-card performance-lab reveal">
+
+                    <div class="lab-header">
+
+                        <div>
+
+                            <span class="lab-label">
+                                LAB / 03
+                            </span>
+
+                            <h3>
+                                PERFORMANCE ANALYSIS
+                            </h3>
+
+                        </div>
+
+                        <i data-lucide="activity"></i>
+
+                    </div>
+
+
+                    <div class="performance-dashboard">
+
+                        <div class="performance-metric">
+
+                            <span>
+                                THREADS
+                            </span>
+
+                            <strong>
+                                100
+                            </strong>
+
+                        </div>
+
+
+                        <div class="performance-metric">
+
+                            <span>
+                                THROUGHPUT
+                            </span>
+
+                            <strong>
+                                20 TPS
+                            </strong>
+
+                        </div>
+
+
+                        <div class="performance-metric">
+
+                            <span>
+                                AVG RESPONSE
+                            </span>
+
+                            <strong>
+                                320 ms
+                            </strong>
+
+                        </div>
+
+
+                        <div class="performance-metric">
+
+                            <span>
+                                ERROR RATE
+                            </span>
+
+                            <strong>
+                                0.8%
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="large-chart">
+
+                        <div class="chart-y">
+
+                            <span>500</span>
+                            <span>400</span>
+                            <span>300</span>
+                            <span>200</span>
+                            <span>100</span>
+
+                        </div>
+
+
+                        <div class="chart-area">
+
+                            <svg
+                                viewBox="0 0 800 260"
+                                preserveAspectRatio="none"
+                                class="performance-svg"
+                            >
+
+                                <polyline
+                                    points="0,210 80,190 160,195 240,150 320,165 400,110 480,135 560,95 640,120 720,80 800,105"
+                                    fill="none"
+                                />
+
+                            </svg>
+
+
+                            <div class="chart-x">
+
+                                <span>10</span>
+                                <span>20</span>
+                                <span>30</span>
+                                <span>40</span>
+                                <span>50</span>
+                                <span>60</span>
+                                <span>70</span>
+                                <span>80</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BUG REPORT -->
+
+                <div class="lab-card bug-lab reveal">
+
+                    <div class="lab-header">
+
+                        <div>
+
+                            <span class="lab-label">
+                                LAB / 04
+                            </span>
+
+                            <h3>
+                                DEFECT ANALYSIS
+                            </h3>
+
+                        </div>
+
+                        <i data-lucide="bug"></i>
+
+                    </div>
+
+
+                    <div class="bug-report">
+
+                        <div class="bug-top">
+
+                            <span class="bug-id">
+                                BUG #QA-024
+                            </span>
+
+                            <span class="bug-severity">
+                                HIGH
+                            </span>
+
+                        </div>
+
+
+                        <h4>
+                            Example defect investigation
+                        </h4>
+
+
+                        <div class="bug-details">
+
+                            <div>
+
+                                <span>
+                                    EXPECTED
+                                </span>
+
+                                <p>
+                                    System should maintain the expected
+                                    business rule under concurrent requests.
+                                </p>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    ACTUAL
+                                </span>
+
+                                <p>
+                                    Unexpected behaviour was observed during
+                                    concurrent request execution.
+                                </p>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    STATUS
+                                </span>
+
+                                <p class="bug-resolved">
+                                    VERIFIED
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CERTIFICATION
+        ====================================================== -->
+
+        <section
+            id="certification"
+            class="section certification-section"
+        >
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-number">06</span>
+
+                    <div>
+
+                        <p class="section-eyebrow">
+                            CERTIFICATION
+                        </p>
+
+                        <h2>
+                            Continuous
+                            <span>learning.</span>
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="certificate-grid">
+
+                    <div class="certificate-preview reveal">
+
+                        <div class="certificate-frame">
+
+                            <div class="certificate-frame-top">
+
+                                <span>
+                                    CERTIFICATE / ECEP
+                                </span>
+
+                                <span>
+                                    VERIFIED
+                                </span>
+
+                            </div>
+
+
+                            <img
+                                src="images/Veeresh%20Avanti_emertxe_certificate.png"
+                                alt="Emertxe Certified Embedded Professional Certificate"
+                                class="certificate-image"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="certificate-info reveal">
+
+                        <span class="certificate-label">
+                            PROFESSIONAL CERTIFICATION
+                        </span>
+
+
+                        <h3>
+                            Emertxe Certified
+                            Embedded Professional
+                        </h3>
+
+
+                        <p class="certificate-acronym">
+                            ECEP
+                        </p>
+
+
+                        <p>
+
+                            Completed hands-on technical training in
+                            Embedded Systems at Emertxe Information
+                            Technologies.
+
+                        </p>
+
+
+                        <div class="certificate-meta">
+
+                            <div>
+
+                                <span>
+                                    TRAINING PERIOD
+                                </span>
+
+                                <strong>
+                                    27 June 2023 — 26 March 2024
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    CERTIFICATION
+                                </span>
+
+                                <strong>
+                                    Emertxe Certified Embedded Professional
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             RESUME / GITHUB CTA
+        ====================================================== -->
+
+        <section class="cta-section section">
+
+            <div class="container">
+
+                <div class="cta-card reveal">
+
+                    <div class="cta-grid">
+
+                        <div>
+
+                            <p class="section-eyebrow">
+                                TESTING WORKSPACE
+                            </p>
+
+                            <h2>
+                                Want to see
+                                <span>the work behind the claims?</span>
+                            </h2>
+
+                            <p>
+
+                                Explore my GitHub workspace for testing
+                                projects, experiments and technical work.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="cta-actions">
+
+                            <a
+                                href="https://github.com/veereshavanti19-android"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="button button-primary"
+                            >
+
+                                <span>
+                                    View GitHub
+                                </span>
+
+                                <i data-lucide="github"></i>
+
+                            </a>
+
+
+                            <a
+                                href="#contact"
+                                class="button button-secondary"
+                            >
+
+                                <span>
+                                    Contact Me
+                                </span>
+
+                                <i data-lucide="arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONTACT
+        ====================================================== -->
+
+        <section id="contact" class="section contact-section">
+
+            <div class="container">
+
+                <div class="contact-content reveal">
+
+                    <p class="section-eyebrow">
+                        07 / CONTACT
+                    </p>
+
+
+                    <h2>
+                        Let's build
+                        <span>better software.</span>
+                    </h2>
+
+
+                    <p class="contact-description">
+
+                        Open to QA opportunities, testing projects,
+                        collaboration and conversations around software quality.
+
+                    </p>
+
+
+                    <div class="contact-grid">
+
+
+                        <a
+                            href="mailto:veereshavanti19@gmail.com"
+                            class="contact-item"
+                        >
+
+                            <div class="contact-icon">
+                                <i data-lucide="mail"></i>
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    EMAIL
+                                </span>
+
+                                <strong>
+                                    veereshavanti19@gmail.com
+                                </strong>
+
+                            </div>
+
+                            <i
+                                data-lucide="arrow-up-right"
+                                class="contact-arrow"
+                            ></i>
+
+                        </a>
+
+
+                        <a
+                            href="tel:+917338484341"
+                            class="contact-item"
+                        >
+
+                            <div class="contact-icon">
+                                <i data-lucide="phone"></i>
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    PHONE
+                                </span>
+
+                                <strong>
+                                    +91 73384 84341
+                                </strong>
+
+                            </div>
+
+                            <i
+                                data-lucide="arrow-up-right"
+                                class="contact-arrow"
+                            ></i>
+
+                        </a>
+
+
+                        <a
+                            href="https://www.linkedin.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="contact-item"
+                        >
+
+                            <div class="contact-icon">
+                                <i data-lucide="linkedin"></i>
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    LINKEDIN
+                                </span>
+
+                                <strong>
+                                    Connect professionally
+                                </strong>
+
+                            </div>
+
+                            <i
+                                data-lucide="arrow-up-right"
+                                class="contact-arrow"
+                            ></i>
+
+                        </a>
+
+
+                        <a
+                            href="https://github.com/veereshavanti19-android"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="contact-item"
+                        >
+
+                            <div class="contact-icon">
+                                <i data-lucide="github"></i>
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    GITHUB
+                                </span>
+
+                                <strong>
+                                    veereshavanti19-android
+                                </strong>
+
+                            </div>
+
+                            <i
+                                data-lucide="arrow-up-right"
+                                class="contact-arrow"
+                            ></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-inner">
+
+            <div class="footer-brand">
+
+                <span class="logo-mark">
+                    VA
+                </span>
+
+                <span>
+                    VEERESH AVANTI
+                </span>
+
+            </div>
+
 
             <p>
-                © 2026 Veeresh Avanti. All rights reserved.
+                Built with curiosity. Tested with intent.
             </p>
 
-            <p>
-                QA Engineer | Software Testing
+
+            <p class="footer-code">
+                QA_ENGINEER © 2026
             </p>
 
         </div>
 
     </footer>
 
+
+    <!-- =========================================================
+         BACK TO TOP
+    ========================================================== -->
+
+    <button
+        class="back-to-top"
+        aria-label="Back to top"
+    >
+
+        <i data-lucide="arrow-up"></i>
+
+    </button>
+
+
+    <!-- Main JavaScript -->
+    <script src="script.js"></script>
 
 </body>
 </html>
