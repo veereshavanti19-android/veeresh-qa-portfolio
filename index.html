@@ -1,1819 +1,1587 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="description"
-        content="Veeresh Avanti — QA Engineer specializing in Manual Testing, API Testing, Automation, Mobile Testing, Performance Testing and Security Testing."
-    >
+<meta name="description"
+content="Veeresh Avanti — QA Engineer specializing in Manual Testing, API Testing, Automation, Mobile Testing, Performance Testing and Security Testing.">
 
-    <meta
-        name="keywords"
-        content="Veeresh Avanti, QA Engineer, Software Testing, Manual Testing, API Testing, Postman, Playwright, Selenium, Appium, JMeter, OWASP ZAP"
-    >
+<meta name="keywords"
+content="Veeresh Avanti, QA Engineer, Software Testing, Manual Testing, API Testing, Postman, Playwright, Selenium, Appium, JMeter, OWASP ZAP">
 
-    <meta
-        name="author"
-        content="Veeresh Avanti"
-    >
+<meta name="author" content="Veeresh Avanti">
 
-    <meta name="theme-color" content="#f5f2ec">
+<meta name="theme-color" content="#f5f2ec">
 
-    <title>Veeresh Avanti | QA Engineer</title>
+<title>Veeresh Avanti | QA Engineer</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
-        rel="stylesheet"
-    >
+<link
+href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap"
+rel="stylesheet">
 
-    <!-- Lucide Icons -->
-    <script
-        src="https://unpkg.com/lucide@latest"
-        defer
-    ></script>
+<script src="https://unpkg.com/lucide@latest"></script>
 
+<style>
 
-    <style>
+/* =========================================================
+   ROOT
+========================================================= */
 
-        /* =========================================================
-           ROOT
-        ========================================================== */
+:root {
+    --paper: #f5f2ec;
+    --paper-2: #ebe7df;
+    --white: #ffffff;
 
-        :root {
-            --paper: #f5f2ec;
-            --paper-2: #ebe7df;
-            --white: #ffffff;
+    --ink: #111111;
+    --ink-soft: #454545;
+    --muted: #77736c;
 
-            --ink: #111111;
-            --ink-soft: #454545;
-            --muted: #77736c;
+    --line: #d8d3ca;
+    --line-dark: #b8b1a6;
 
-            --line: #d8d3ca;
-            --line-dark: #b9b3a9;
+    --accent: #c63b22;
+    --accent-dark: #9e2816;
+    --accent-soft: #f1d8d1;
 
-            --accent: #c63b22;
-            --accent-dark: #9e2816;
-            --accent-soft: #f1d8d1;
+    --pass: #2f7d4a;
 
-            --pass: #2f7d4a;
+    --sans: "DM Sans", sans-serif;
+    --display: "Manrope", sans-serif;
+    --mono: "Space Mono", monospace;
 
-            --radius: 2px;
+    --container: 1240px;
+}
 
-            --sans: "DM Sans", sans-serif;
-            --display: "Manrope", sans-serif;
-            --mono: "Space Mono", monospace;
+/* =========================================================
+   RESET
+========================================================= */
 
-            --container: 1240px;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+html {
+    scroll-behavior: smooth;
+}
 
-        /* =========================================================
-           RESET
-        ========================================================== */
+body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    overflow-x: hidden;
+}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+::selection {
+    background: var(--accent);
+    color: white;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-        body {
-            background: var(--paper);
-            color: var(--ink);
-            font-family: var(--sans);
-            overflow-x: hidden;
-        }
+img {
+    display: block;
+    max-width: 100%;
+}
 
-        body::selection {
-            background: var(--accent);
-            color: white;
-        }
+button {
+    font: inherit;
+}
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+/* =========================================================
+   GLOBAL
+========================================================= */
 
-        img {
-            display: block;
-            max-width: 100%;
-        }
+.container {
+    width: min(calc(100% - 48px), var(--container));
+    margin: auto;
+}
+
+.mono {
+    font-family: var(--mono);
+}
+
+.top-line {
+    height: 4px;
+    background: var(--ink);
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(245,242,236,.94);
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid var(--line);
+}
+
+.nav-inner {
+    width: min(calc(100% - 48px), var(--container));
+    height: 76px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-mark {
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--ink);
+    color: var(--paper);
+
+    font-family: var(--display);
+    font-size: 13px;
+    font-weight: 800;
+}
 
-        button {
-            font: inherit;
-        }
+.brand-text {
+    font-family: var(--display);
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: .03em;
+}
 
+.brand-text span {
+    color: var(--accent);
+}
 
-        /* =========================================================
-           GLOBAL
-        ========================================================== */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
 
-        .site {
-            position: relative;
-            z-index: 2;
-        }
-
-        .container {
-            width: min(
-                calc(100% - 48px),
-                var(--container)
-            );
+.nav-link {
+    position: relative;
 
-            margin-inline: auto;
-        }
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
 
-        .mono {
-            font-family: var(--mono);
-        }
+    color: var(--muted);
+}
 
-        .accent {
-            color: var(--accent);
-        }
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
 
+    width: 0;
+    height: 2px;
 
-        /* =========================================================
-           TOP LINE
-        ========================================================== */
+    background: var(--accent);
+    transition: width .25s ease;
+}
 
-        .top-line {
-            height: 4px;
-            background: var(--ink);
-        }
+.nav-link:hover {
+    color: var(--ink);
+}
 
+.nav-link:hover::after {
+    width: 100%;
+}
 
-        /* =========================================================
-           NAVIGATION
-        ========================================================== */
+.nav-contact {
+    padding: 10px 15px;
 
-        .nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+    border: 1px solid var(--ink);
 
-            background: rgba(245, 242, 236, 0.94);
-            backdrop-filter: blur(18px);
+    font-family: var(--mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
 
-            border-bottom: 1px solid var(--line);
-        }
+    transition: .25s ease;
+}
 
-        .nav-inner {
-            width: min(
-                calc(100% - 48px),
-                var(--container)
-            );
+.nav-contact:hover {
+    background: var(--ink);
+    color: var(--paper);
+}
 
-            height: 78px;
-            margin-inline: auto;
+.mobile-menu {
+    display: none;
 
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+    width: 42px;
+    height: 42px;
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+    border: 1px solid var(--line);
+    background: transparent;
 
-        .brand-mark {
-            width: 40px;
-            height: 40px;
+    cursor: pointer;
+}
 
-            display: grid;
-            place-items: center;
+/* =========================================================
+   HERO
+========================================================= */
 
-            background: var(--ink);
-            color: var(--paper);
+.hero {
+    min-height: calc(100vh - 80px);
 
-            font-family: var(--display);
-            font-weight: 800;
-            font-size: 13px;
+    position: relative;
+    overflow: hidden;
 
-            letter-spacing: -0.04em;
-        }
+    border-bottom: 1px solid var(--line);
+}
 
-        .brand-text {
-            font-family: var(--display);
-            font-weight: 800;
-            font-size: 15px;
-            letter-spacing: 0.03em;
-        }
+.hero::before {
+    content: "QA";
 
-        .brand-text span {
-            color: var(--accent);
-        }
+    position: absolute;
+    right: -30px;
+    bottom: -110px;
 
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 34px;
-        }
+    font-family: var(--display);
+    font-size: clamp(190px, 28vw, 430px);
+    font-weight: 800;
+    line-height: .7;
 
-        .nav-link {
-            position: relative;
+    color: rgba(17,17,17,.035);
 
-            font-family: var(--mono);
-            font-size: 10px;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
+    pointer-events: none;
+}
 
-            color: var(--muted);
+.hero-grid {
+    width: min(calc(100% - 48px), var(--container));
+    min-height: calc(100vh - 160px);
 
-            transition: color 0.25s ease;
-        }
+    margin: auto;
 
-        .nav-link::after {
-            content: "";
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 70px;
 
-            position: absolute;
-            left: 0;
-            bottom: -9px;
+    align-items: center;
+}
 
-            width: 0;
-            height: 2px;
+.hero-content {
+    padding: 70px 0 45px;
+}
 
-            background: var(--accent);
+.availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
 
-            transition: width 0.25s ease;
-        }
+    margin-bottom: 25px;
 
-        .nav-link:hover {
-            color: var(--ink);
-        }
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
 
-        .nav-link:hover::after {
-            width: 100%;
-        }
+    color: var(--ink-soft);
+}
 
-        .nav-contact {
-            display: flex;
-            align-items: center;
-            gap: 8px;
+.availability-dot {
+    width: 8px;
+    height: 8px;
 
-            padding: 11px 16px;
+    border-radius: 50%;
+    background: var(--pass);
 
-            border: 1px solid var(--ink);
+    box-shadow: 0 0 0 5px rgba(47,125,74,.1);
+}
 
-            font-family: var(--mono);
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
+.hero-kicker {
+    margin-bottom: 14px;
 
-            transition:
-                background 0.25s ease,
-                color 0.25s ease;
-        }
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
 
-        .nav-contact:hover {
-            background: var(--ink);
-            color: var(--paper);
-        }
+    text-transform: uppercase;
+    letter-spacing: .12em;
 
-        .mobile-menu {
-            display: none;
+    color: var(--accent);
+}
 
-            width: 42px;
-            height: 42px;
+.hero-title {
+    max-width: 850px;
 
-            border: 1px solid var(--line);
-            background: transparent;
+    font-family: var(--display);
+    font-size: clamp(62px, 7.8vw, 112px);
+    font-weight: 800;
 
-            cursor: pointer;
-        }
+    line-height: .88;
+    letter-spacing: -.075em;
 
+    margin-bottom: 32px;
+}
 
-        /* =========================================================
-           HERO
-        ========================================================== */
+.hero-title span {
+    display: block;
+}
 
-        .hero {
-            min-height: calc(100vh - 82px);
+.hero-title .outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--ink);
+}
 
-            display: grid;
-            align-items: center;
+.hero-description {
+    max-width: 630px;
 
-            border-bottom: 1px solid var(--line);
+    font-size: 18px;
+    line-height: 1.7;
 
-            position: relative;
-            overflow: hidden;
-        }
+    color: var(--ink-soft);
 
-        .hero::before {
-            content: "QA";
+    margin-bottom: 28px;
+}
 
-            position: absolute;
-            right: -30px;
-            bottom: -100px;
+.hero-specialties {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 
-            font-family: var(--display);
-            font-weight: 800;
-            font-size: clamp(180px, 28vw, 430px);
+    margin-bottom: 35px;
+}
 
-            line-height: 0.7;
+.specialty {
+    padding: 8px 11px;
 
-            color: rgba(17, 17, 17, 0.035);
+    border: 1px solid var(--line);
 
-            pointer-events: none;
-        }
+    background: rgba(255,255,255,.35);
 
-        .hero-grid {
-            width: min(
-                calc(100% - 48px),
-                var(--container)
-            );
+    font-family: var(--mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
 
-            margin-inline: auto;
+    color: var(--ink-soft);
+}
 
-            display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
 
-            gap: 70px;
+.button {
+    min-height: 52px;
 
-            padding: 80px 0 60px;
-        }
+    padding: 0 19px;
 
-        .hero-content {
-            align-self: center;
-        }
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
 
-        .availability {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
+    border: 1px solid var(--ink);
 
-            margin-bottom: 27px;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 700;
 
-            font-family: var(--mono);
-            font-size: 10px;
-            letter-spacing: 0.09em;
-            text-transform: uppercase;
+    text-transform: uppercase;
+    letter-spacing: .06em;
 
-            color: var(--ink-soft);
-        }
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease;
+}
 
-        .availability-dot {
-            width: 8px;
-            height: 8px;
+.button:hover {
+    transform: translateY(-3px);
+}
 
-            border-radius: 50%;
+.button-primary {
+    background: var(--ink);
+    color: var(--paper);
+}
 
-            background: var(--pass);
+.button-primary:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+}
 
-            box-shadow:
-                0 0 0 5px rgba(47, 125, 74, 0.10);
-        }
+.button-secondary {
+    background: transparent;
+}
 
-        .hero-kicker {
-            margin-bottom: 15px;
+.button-secondary:hover {
+    background: white;
+}
 
-            font-family: var(--mono);
-            font-size: 11px;
-            font-weight: 700;
+.linkedin-icon {
+    width: 17px;
+    height: 17px;
+}
 
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
+/* =========================================================
+   PORTRAIT
+========================================================= */
 
-            color: var(--accent);
-        }
+.hero-visual {
+    min-height: 580px;
 
-        .hero-title {
-            max-width: 850px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            font-family: var(--display);
-            font-size: clamp(64px, 8vw, 116px);
-            font-weight: 800;
+    position: relative;
+}
 
-            line-height: 0.88;
-            letter-spacing: -0.075em;
+.portrait-frame {
+    position: relative;
 
-            margin-bottom: 34px;
-        }
+    width: min(410px, 100%);
+    aspect-ratio: .82;
 
-        .hero-title span {
-            display: block;
-        }
+    background: var(--ink);
 
-        .hero-title .outline {
-            color: transparent;
+    padding: 12px;
 
-            -webkit-text-stroke: 1.5px var(--ink);
-        }
+    transform: rotate(2deg);
 
-        .hero-description {
-            max-width: 620px;
+    box-shadow: 18px 18px 0 var(--accent);
 
-            font-size: 18px;
-            line-height: 1.7;
+    transition:
+        transform .5s ease,
+        box-shadow .5s ease;
+}
 
-            color: var(--ink-soft);
+.portrait-frame:hover {
+    transform: rotate(0) translateY(-8px);
+    box-shadow: 24px 24px 0 var(--accent);
+}
 
-            margin-bottom: 30px;
-        }
+.portrait-frame::before {
+    content: "";
 
-        .hero-specialties {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
+    position: absolute;
+    inset: 12px;
 
-            margin-bottom: 38px;
-        }
+    border: 1px solid rgba(255,255,255,.35);
 
-        .specialty {
-            padding: 8px 11px;
+    z-index: 2;
+    pointer-events: none;
+}
 
-            border: 1px solid var(--line);
+.portrait {
+    width: 100%;
+    height: 100%;
 
-            background: rgba(255,255,255,0.35);
+    object-fit: cover;
 
-            font-family: var(--mono);
-            font-size: 9px;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
+    filter: saturate(.82) contrast(1.02);
+}
 
-            color: var(--ink-soft);
-        }
+.portrait-label {
+    position: absolute;
+    z-index: 5;
 
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
+    padding: 9px 12px;
 
-        .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
+    background: var(--paper);
+    color: var(--ink);
 
-            min-height: 52px;
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 700;
 
-            padding: 0 19px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
 
-            font-family: var(--mono);
-            font-size: 10px;
-            font-weight: 700;
+.portrait-label.top {
+    top: 27px;
+    left: 27px;
+}
 
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
+.portrait-label.bottom {
+    right: 27px;
+    bottom: 27px;
 
-            border: 1px solid var(--ink);
+    background: var(--accent);
+    color: white;
+}
 
-            transition:
-                transform 0.25s ease,
-                background 0.25s ease,
-                color 0.25s ease;
-        }
+.portrait-number {
+    position: absolute;
+    left: -45px;
+    bottom: 18px;
 
-        .button:hover {
-            transform: translateY(-3px);
-        }
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: .1em;
 
-        .button-primary {
-            background: var(--ink);
-            color: var(--paper);
-        }
+    writing-mode: vertical-rl;
 
-        .button-primary:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-        }
+    color: var(--muted);
+}
 
-        .button-secondary {
-            background: transparent;
-        }
+/* =========================================================
+   HERO META
+========================================================= */
 
-        .button-secondary:hover {
-            background: white;
-        }
+.hero-meta {
+    border-top: 1px solid var(--line);
+}
 
-        .https://www.linkedin.com/in/veeresh-avanti-590282283/-icon {
-            width: 17px;
-            height: 17px;
-        }
+.hero-meta-inner {
+    width: min(calc(100% - 48px), var(--container));
+    margin: auto;
 
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
 
-        /* =========================================================
-           HERO PROFILE
-        ========================================================== */
+.meta-box {
+    padding: 22px 0;
 
-        .hero-visual {
-            min-height: 600px;
+    border-right: 1px solid var(--line);
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
 
-            position: relative;
-        }
+.meta-box:not(:first-child) {
+    padding-left: 28px;
+}
 
-        .portrait-frame {
-            position: relative;
+.meta-box:last-child {
+    border-right: none;
+}
 
-            width: min(420px, 100%);
-            aspect-ratio: 0.82;
+.meta-number {
+    font-family: var(--display);
+    font-size: 25px;
+    font-weight: 800;
+}
 
-            background: var(--ink);
+.meta-label {
+    font-family: var(--mono);
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: .09em;
 
-            padding: 12px;
+    color: var(--muted);
+}
 
-            transform: rotate(2deg);
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
 
-            box-shadow:
-                18px 18px 0 var(--accent);
+.section {
+    padding: 120px 0;
+    border-bottom: 1px solid var(--line);
+}
 
-            transition:
-                transform 0.5s ease,
-                box-shadow 0.5s ease;
-        }
+.section-header {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 20px;
 
-        .portrait-frame:hover {
-            transform: rotate(0deg) translateY(-8px);
-            box-shadow:
-                24px 24px 0 var(--accent);
-        }
+    margin-bottom: 62px;
+}
 
-        .portrait-frame::before {
-            content: "";
+.section-number {
+    padding-top: 7px;
 
-            position: absolute;
-            inset: 12px;
+    font-family: var(--mono);
+    font-size: 11px;
 
-            border: 1px solid rgba(255,255,255,0.35);
+    color: var(--accent);
+}
 
-            pointer-events: none;
+.section-label {
+    margin-bottom: 13px;
 
-            z-index: 2;
-        }
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 700;
 
-        .portrait {
-            width: 100%;
-            height: 100%;
+    text-transform: uppercase;
+    letter-spacing: .12em;
 
-            object-fit: cover;
+    color: var(--accent);
+}
 
-            filter: saturate(0.82) contrast(1.02);
-        }
+.section-title {
+    max-width: 850px;
 
-        .portrait-label {
-            position: absolute;
+    font-family: var(--display);
+    font-size: clamp(42px,5vw,72px);
+    font-weight: 800;
 
-            z-index: 4;
+    line-height: .98;
+    letter-spacing: -.055em;
+}
 
-            background: var(--paper);
-            color: var(--ink);
+.section-title span {
+    color: var(--muted);
+}
 
-            padding: 9px 12px;
+/* =========================================================
+   ABOUT
+========================================================= */
 
-            font-family: var(--mono);
-            font-size: 9px;
-            font-weight: 700;
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 80px;
+}
 
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-        }
+.about-lead {
+    margin-bottom: 30px;
 
-        .portrait-label.top {
-            top: 27px;
-            left: 27px;
-        }
+    font-family: var(--display);
+    font-size: clamp(27px,3vw,43px);
+    font-weight: 700;
 
-        .portrait-label.bottom {
-            bottom: 27px;
-            right: 27px;
+    line-height: 1.13;
+    letter-spacing: -.04em;
+}
 
-            background: var(--accent);
-            color: white;
-        }
+.about-lead span {
+    color: var(--accent);
+}
 
-        .portrait-number {
-            position: absolute;
+.about-copy {
+    max-width: 720px;
 
-            left: -45px;
-            bottom: 18px;
+    font-size: 17px;
+    line-height: 1.85;
 
-            font-family: var(--mono);
-            font-size: 9px;
-            letter-spacing: 0.1em;
+    color: var(--ink-soft);
+}
 
-            writing-mode: vertical-rl;
+.about-copy + .about-copy {
+    margin-top: 20px;
+}
 
-            color: var(--muted);
-        }
+.about-side {
+    border-top: 2px solid var(--ink);
+}
 
+.about-row {
+    padding: 18px 0;
 
-        /* =========================================================
-           HERO META
-        ========================================================== */
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
 
-        .hero-meta {
-            border-top: 1px solid var(--line);
-        }
+    border-bottom: 1px solid var(--line);
+}
 
-        .hero-meta-inner {
-            width: min(
-                calc(100% - 48px),
-                var(--container)
-            );
+.about-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
 
-            margin-inline: auto;
+    color: var(--muted);
+}
 
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-        }
+.about-value {
+    font-size: 14px;
+    font-weight: 700;
+    text-align: right;
+}
 
-        .meta-box {
-            padding: 23px 0;
+/* =========================================================
+   TESTING APPROACH
+========================================================= */
 
-            border-right: 1px solid var(--line);
+.approach {
+    background: var(--ink);
+    color: var(--paper);
 
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
+    border-bottom-color: var(--ink);
+}
 
-        .meta-box:not(:first-child) {
-            padding-left: 28px;
-        }
+.approach .section-number,
+.approach .section-label {
+    color: #ef745b;
+}
 
-        .meta-box:last-child {
-            border-right: none;
-        }
+.approach .section-title span {
+    color: #88847d;
+}
 
-        .meta-number {
-            font-family: var(--display);
-            font-size: 25px;
-            font-weight: 800;
-        }
+.approach-flow {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
 
-        .meta-label {
-            font-family: var(--mono);
-            font-size: 8px;
-            letter-spacing: 0.09em;
-            text-transform: uppercase;
-            color: var(--muted);
-        }
+.approach-card {
+    min-height: 250px;
 
+    padding: 28px 24px;
 
-        /* =========================================================
-           SECTION
-        ========================================================== */
+    border-top: 1px solid #383838;
+    border-bottom: 1px solid #383838;
+    border-right: 1px solid #383838;
 
-        .section {
-            padding: 125px 0;
-            border-bottom: 1px solid var(--line);
-        }
+    transition:
+        transform .3s ease,
+        background .3s ease;
+}
 
-        .section-header {
-            display: grid;
-            grid-template-columns: 90px 1fr;
-            gap: 20px;
+.approach-card:first-child {
+    border-left: 1px solid #383838;
+}
 
-            margin-bottom: 65px;
-        }
+.approach-card:hover {
+    background: #1d1d1d;
+    transform: translateY(-6px);
+}
 
-        .section-number {
-            font-family: var(--mono);
-            font-size: 11px;
-            color: var(--accent);
+.approach-index {
+    margin-bottom: 42px;
 
-            padding-top: 7px;
-        }
+    font-family: var(--mono);
+    font-size: 10px;
 
-        .section-label {
-            font-family: var(--mono);
-            font-size: 10px;
-            font-weight: 700;
+    color: #777;
+}
 
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
+.approach-card h3 {
+    margin-bottom: 13px;
 
-            color: var(--accent);
+    font-family: var(--display);
+    font-size: 23px;
+}
 
-            margin-bottom: 13px;
-        }
+.approach-card p {
+    font-size: 14px;
+    line-height: 1.65;
 
-        .section-title {
-            max-width: 850px;
+    color: #aaa69e;
+}
 
-            font-family: var(--display);
-            font-size: clamp(42px, 5vw, 72px);
+/* =========================================================
+   TESTING STACK
+========================================================= */
 
-            font-weight: 800;
-            line-height: 0.98;
+.stack-intro {
+    max-width: 720px;
 
-            letter-spacing: -0.055em;
-        }
+    margin-bottom: 52px;
 
-        .section-title span {
-            color: var(--muted);
-        }
+    font-size: 17px;
+    line-height: 1.8;
 
+    color: var(--ink-soft);
+}
 
-        /* =========================================================
-           ABOUT
-        ========================================================== */
+.tool-grid {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+}
 
-            gap: 80px;
-        }
+.tool {
+    min-height: 145px;
 
-        .about-lead {
-            font-family: var(--display);
-            font-size: clamp(27px, 3vw, 43px);
-            font-weight: 700;
+    padding: 24px;
 
-            line-height: 1.13;
-            letter-spacing: -0.04em;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
 
-            margin-bottom: 32px;
-        }
+    background: rgba(255,255,255,.18);
 
-        .about-lead span {
-            color: var(--accent);
-        }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-        .about-copy {
-            max-width: 720px;
+    transition:
+        transform .3s ease,
+        background .3s ease;
+}
 
-            font-size: 17px;
-            line-height: 1.85;
+.tool:hover {
+    background: white;
+    transform: translateY(-4px);
+}
 
-            color: var(--ink-soft);
-        }
+.tool img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
 
-        .about-copy + .about-copy {
-            margin-top: 20px;
-        }
+.tool-name {
+    font-family: var(--display);
+    font-size: 14px;
+    font-weight: 700;
+}
 
-        .about-side {
-            border-top: 2px solid var(--ink);
+.tool-type {
+    margin-top: 4px;
 
-            padding-top: 18px;
-        }
+    font-family: var(--mono);
+    font-size: 8px;
 
-        .about-side-row {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
+    text-transform: uppercase;
+    letter-spacing: .07em;
 
-            padding: 18px 0;
+    color: var(--muted);
+}
 
-            border-bottom: 1px solid var(--line);
-        }
+/* =========================================================
+   PROJECTS
+========================================================= */
 
-        .about-side-label {
-            font-family: var(--mono);
-            font-size: 9px;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--muted);
-        }
+.projects-section {
+    padding-bottom: 150px;
+}
 
-        .about-side-value {
-            font-size: 14px;
-            font-weight: 700;
-            text-align: right;
-        }
+.projects-intro {
+    max-width: 720px;
 
+    margin: -35px 0 70px 110px;
 
-        /* =========================================================
-           TESTING APPROACH
-        ========================================================== */
+    font-size: 17px;
+    line-height: 1.8;
 
-        .approach {
-            background: var(--ink);
-            color: var(--paper);
+    color: var(--ink-soft);
+}
 
-            border-bottom-color: var(--ink);
-        }
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
 
-        .approach .section-label {
-            color: #ef745b;
-        }
+.project {
+    position: relative;
 
-        .approach .section-number {
-            color: #ef745b;
-        }
+    display: grid;
+    grid-template-columns: 90px 1fr .75fr;
 
-        .approach .section-title span {
-            color: #88847d;
-        }
+    min-height: 470px;
 
-        .approach-flow {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-        }
+    border: 1px solid var(--line);
 
-        .approach-card {
-            min-height: 260px;
+    background: rgba(255,255,255,.25);
 
-            padding: 30px 25px;
+    overflow: hidden;
 
-            border-top: 1px solid #3b3b3b;
-            border-bottom: 1px solid #3b3b3b;
-            border-right: 1px solid #3b3b3b;
+    transition:
+        transform .5s cubic-bezier(.2,.8,.2,1),
+        box-shadow .5s ease,
+        border-color .3s ease;
+}
 
-            transition:
-                background 0.3s ease,
-                transform 0.3s ease;
-        }
+.project:hover {
+    transform: translateY(-8px);
+    border-color: var(--ink);
 
-        .approach-card:first-child {
-            border-left: 1px solid #3b3b3b;
-        }
+    box-shadow: 14px 14px 0 var(--accent);
+}
 
-        .approach-card:hover {
-            background: #1c1c1c;
-            transform: translateY(-6px);
-        }
+.project-index {
+    padding: 28px 20px;
 
-        .approach-index {
-            font-family: var(--mono);
-            font-size: 10px;
-            color: #777;
+    border-right: 1px solid var(--line);
 
-            margin-bottom: 45px;
-        }
+    font-family: var(--mono);
+    font-size: 10px;
 
-        .approach-card h3 {
-            font-family: var(--display);
-            font-size: 24px;
+    color: var(--accent);
+}
 
-            margin-bottom: 13px;
-        }
+.project-main {
+    padding: 42px 45px;
+}
 
-        .approach-card p {
-            font-size: 14px;
-            line-height: 1.65;
+.project-tag {
+    margin-bottom: 18px;
 
-            color: #a9a59d;
-        }
+    font-family: var(--mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: .09em;
 
+    color: var(--accent);
+}
 
-        /* =========================================================
-           TOOL STACK
-        ========================================================== */
+.project-title {
+    margin-bottom: 18px;
 
-        .stack-intro {
-            max-width: 700px;
+    font-family: var(--display);
+    font-size: clamp(32px,4vw,54px);
+    font-weight: 800;
 
-            font-size: 17px;
-            line-height: 1.8;
+    line-height: .98;
+    letter-spacing: -.05em;
+}
 
-            color: var(--ink-soft);
+.project-description {
+    max-width: 640px;
 
-            margin-bottom: 55px;
-        }
+    margin-bottom: 26px;
 
-        .tool-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
+    font-size: 15px;
+    line-height: 1.75;
 
-            border-top: 1px solid var(--line);
-            border-left: 1px solid var(--line);
-        }
+    color: var(--ink-soft);
+}
 
-        .tool {
-            min-height: 150px;
+.project-flow {
+    margin-bottom: 27px;
 
-            padding: 25px;
+    font-family: var(--mono);
+    font-size: 10px;
+    line-height: 1.8;
 
-            border-right: 1px solid var(--line);
-            border-bottom: 1px solid var(--line);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
 
-            background: rgba(255,255,255,0.18);
+.project-flow span {
+    color: var(--accent);
+}
 
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+.project-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
 
-            transition:
-                background 0.3s ease,
-                transform 0.3s ease;
-        }
+.project-tool {
+    padding: 7px 9px;
 
-        .tool:hover {
-            background: white;
-            transform: translateY(-4px);
-        }
+    border: 1px solid var(--line);
 
-        .tool img {
-            width: 32px;
-            height: 32px;
+    font-family: var(--mono);
+    font-size: 8px;
+    text-transform: uppercase;
+}
 
-            object-fit: contain;
-        }
+.project-side {
+    position: relative;
 
-        .tool-name {
-            font-family: var(--display);
-            font-weight: 700;
-            font-size: 14px;
-        }
+    padding: 40px;
 
-        .tool-type {
-            font-family: var(--mono);
-            font-size: 8px;
+    background: var(--ink);
+    color: var(--paper);
 
-            letter-spacing: 0.07em;
-            text-transform: uppercase;
+    overflow: hidden;
+}
 
-            color: var(--muted);
+.project-side::before {
+    content: "";
 
-            margin-top: 4px;
-        }
+    position: absolute;
+    width: 250px;
+    height: 250px;
 
+    right: -100px;
+    top: -80px;
 
-        /* =========================================================
-           PROJECTS
-        ========================================================== */
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 50%;
+}
 
-        .projects-section {
-            padding-bottom: 150px;
-        }
+.project-side::after {
+    content: "";
 
-        .projects-intro {
-            max-width: 720px;
+    position: absolute;
+    width: 160px;
+    height: 160px;
 
-            margin-top: -35px;
-            margin-bottom: 75px;
-            margin-left: 110px;
+    right: -55px;
+    top: -35px;
 
-            font-size: 17px;
-            line-height: 1.8;
+    border: 1px solid rgba(198,59,34,.6);
+    border-radius: 50%;
+}
 
-            color: var(--ink-soft);
-        }
+.project-side-label {
+    margin-bottom: 26px;
 
-        .projects-list {
-            display: flex;
-            flex-direction: column;
-            gap: 22px;
-        }
+    font-family: var(--mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
 
-        .project {
-            position: relative;
+    color: #88847d;
+}
 
-            display: grid;
-            grid-template-columns: 90px 1fr 0.75fr;
+.project-side h4 {
+    margin-bottom: 20px;
 
-            min-height: 480px;
+    font-family: var(--display);
+    font-size: 22px;
+}
 
-            border: 1px solid var(--line);
+.project-checks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 
-            background: rgba(255,255,255,0.25);
+.project-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
 
-            overflow: hidden;
+    font-size: 13px;
+    line-height: 1.55;
 
-            transition:
-                transform 0.5s cubic-bezier(.2,.8,.2,1),
-                border-color 0.3s ease,
-                box-shadow 0.5s ease;
-        }
+    color: #c4c0b8;
+}
 
-        .project:hover {
-            transform: translateY(-9px);
+.project-check::before {
+    content: "✓";
 
-            border-color: var(--ink);
+    color: #63a978;
+    font-weight: 700;
+}
 
-            box-shadow:
-                15px 15px 0 var(--accent);
-        }
+.project-result {
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    bottom: 35px;
 
-        .project-index {
-            padding: 28px 20px;
+    padding-top: 15px;
 
-            border-right: 1px solid var(--line);
+    border-top: 1px solid #383838;
 
-            font-family: var(--mono);
-            font-size: 11px;
-            color: var(--accent);
-        }
+    font-family: var(--mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
 
-        .project-main {
-            padding: 42px 48px;
-        }
+    color: #777;
+}
 
-        .project-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+/* =========================================================
+   COVERAGE
+========================================================= */
 
-            gap: 15px;
+.coverage-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
 
-            margin-bottom: 25px;
-        }
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+}
 
-        .project-category {
-            font-family: var(--mono);
-            font-size: 9px;
+.coverage-card {
+    min-height: 210px;
 
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
+    padding: 28px;
 
-            color: var(--muted);
-        }
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
 
-        .project-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+    transition: transform .3s ease;
+}
 
-            font-family: var(--mono);
-            font-size: 8px;
+.coverage-card:hover {
+    transform: translateY(-5px);
+}
 
-            letter-spacing: 0.07em;
-            text-transform: uppercase;
+.coverage-number {
+    margin-bottom: 45px;
 
-            color: var(--pass);
-        }
+    font-family: var(--mono);
+    font-size: 10px;
 
-        .project-status::before {
-            content: "";
+    color: var(--accent);
+}
 
-            width: 6px;
-            height: 6px;
+.coverage-card h3 {
+    margin-bottom: 10px;
 
-            border-radius: 50%;
+    font-family: var(--display);
+    font-size: 22px;
+}
 
-            background: var(--pass);
-        }
+.coverage-card p {
+    font-size: 14px;
+    line-height: 1.65;
 
-        .project h3 {
-            font-family: var(--display);
-            font-size: clamp(38px, 4vw, 62px);
+    color: var(--ink-soft);
+}
 
-            line-height: 0.95;
-            letter-spacing: -0.055em;
+/* =========================================================
+   CERTIFICATION
+========================================================= */
 
-            margin-bottom: 25px;
-        }
+.certificate-section {
+    background: var(--paper-2);
+}
 
-        .project-description {
-            max-width: 600px;
+.certificate-layout {
+    display: grid;
+    grid-template-columns: .75fr 1.25fr;
+    gap: 70px;
 
-            font-size: 16px;
-            line-height: 1.75;
+    align-items: center;
+}
 
-            color: var(--ink-soft);
+.certificate-copy h3 {
+    margin-bottom: 16px;
 
-            margin-bottom: 28px;
-        }
+    font-family: var(--display);
+    font-size: 36px;
+    letter-spacing: -.04em;
+}
 
-        .project-focus {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 7px;
+.certificate-copy p {
+    max-width: 520px;
 
-            margin-bottom: 28px;
-        }
+    font-size: 16px;
+    line-height: 1.8;
 
-        .project-focus span {
-            padding: 7px 9px;
+    color: var(--ink-soft);
+}
 
-            border: 1px solid var(--line);
+.certificate-frame {
+    padding: 12px;
 
-            font-family: var(--mono);
-            font-size: 8px;
+    background: white;
 
-            letter-spacing: 0.03em;
-            text-transform: uppercase;
-        }
+    border: 1px solid var(--line);
 
-        .project-tools {
-            display: flex;
-            align-items: center;
-            gap: 15px;
+    box-shadow: 12px 12px 0 var(--ink);
 
-            padding-top: 20px;
+    transition: transform .4s ease;
+}
 
-            border-top: 1px solid var(--line);
-        }
+.certificate-frame:hover {
+    transform: translateY(-6px);
+}
 
-        .project-tool {
-            display: flex;
-            align-items: center;
-            gap: 6px;
+.certificate-frame img {
+    width: 100%;
+    height: auto;
+}
 
-            font-family: var(--mono);
-            font-size: 8px;
+/* =========================================================
+   CONTACT
+========================================================= */
 
-            color: var(--muted);
-        }
+.contact-section {
+    background: var(--accent);
+    color: white;
 
-        .project-tool img {
-            width: 17px;
-            height: 17px;
-            object-fit: contain;
-        }
+    border-bottom: none;
+}
 
-        .project-side {
-            position: relative;
+.contact-section .section-number,
+.contact-section .section-label {
+    color: rgba(255,255,255,.7);
+}
 
-            padding: 42px;
+.contact-title {
+    max-width: 900px;
 
-            background: var(--ink);
-            color: var(--paper);
+    margin-bottom: 40px;
 
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+    font-family: var(--display);
+    font-size: clamp(50px,7vw,100px);
+    font-weight: 800;
 
-        .project-side::after {
-            content: "";
+    line-height: .9;
+    letter-spacing: -.065em;
+}
 
-            position: absolute;
+.contact-description {
+    max-width: 620px;
 
-            width: 180px;
-            height: 180px;
+    margin-bottom: 35px;
 
-            right: -70px;
-            bottom: -70px;
+    font-size: 17px;
+    line-height: 1.75;
 
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 50%;
+    color: rgba(255,255,255,.82);
+}
 
-            box-shadow:
-                0 0 0 35px rgba(255,255,255,0.02),
-                0 0 0 70px rgba(255,255,255,0.015);
-        }
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
 
-        .project-side-label {
-            font-family: var(--mono);
-            font-size: 8px;
+.contact-button {
+    min-height: 52px;
 
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+    padding: 0 19px;
 
-            color: #888;
-        }
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
 
-        .project-workflow {
-            position: relative;
-            z-index: 2;
+    background: white;
+    color: var(--ink);
 
-            display: flex;
-            flex-direction: column;
-            gap: 13px;
-        }
+    border: 1px solid white;
 
-        .workflow-item {
-            display: flex;
-            align-items: center;
-            gap: 13px;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 700;
 
-            padding-bottom: 13px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
 
-            border-bottom: 1px solid #333;
-        }
+    transition: .25s ease;
+}
 
-        .workflow-number {
-            font-family: var(--mono);
-            font-size: 8px;
-            color: var(--accent);
-        }
+.contact-button:hover {
+    background: var(--ink);
+    color: white;
+    border-color: var(--ink);
 
-        .workflow-text {
-            font-family: var(--display);
-            font-size: 13px;
-            font-weight: 700;
-        }
+    transform: translateY(-3px);
+}
 
-        .project-result {
-            position: relative;
-            z-index: 2;
+/* =========================================================
+   FOOTER
+========================================================= */
 
-            padding-top: 25px;
+.footer {
+    background: var(--ink);
+    color: #aaa69e;
 
-            border-top: 1px solid #333;
-        }
+    padding: 28px 0;
+}
 
-        .project-result-label {
-            display: block;
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
 
-            font-family: var(--mono);
-            font-size: 8px;
+.footer-text {
+    font-family: var(--mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+}
 
-            color: #777;
+.footer-links {
+    display: flex;
+    gap: 18px;
+}
 
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
+.footer-link {
+    font-family: var(--mono);
+    font-size: 9px;
+    text-transform: uppercase;
+}
 
-            margin-bottom: 8px;
-        }
+.footer-link:hover {
+    color: white;
+}
 
-        .project-result-text {
-            font-size: 14px;
-            line-height: 1.55;
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
 
-            color: #c5c1ba;
-        }
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
 
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1);
+}
 
-        /* =========================================================
-           PROJECT SPECIAL ACCENTS
-        ========================================================== */
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-        .project:nth-child(2) .project-side {
-            background: #262525;
-        }
+.project.reveal {
+    transform: translateY(45px) scale(.985);
+}
 
-        .project:nth-child(3) .project-side {
-            background: #191919;
-        }
+.project.reveal.visible {
+    transform: translateY(0) scale(1);
+}
 
-        .project:nth-child(4) .project-side {
-            background: #302b29;
-        }
+/* =========================================================
+   MOBILE
+========================================================= */
 
+@media (max-width: 1000px) {
 
-        /* =========================================================
-           QA COVERAGE
-        ========================================================== */
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
 
-        .coverage-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+        padding-top: 50px;
+    }
 
-            border-top: 1px solid var(--line);
-            border-left: 1px solid var(--line);
-        }
+    .hero-content {
+        padding-bottom: 0;
+    }
 
-        .coverage {
-            min-height: 210px;
+    .hero-visual {
+        min-height: 500px;
+    }
 
-            padding: 30px;
+    .portrait-frame {
+        width: min(360px,90%);
+    }
 
-            border-right: 1px solid var(--line);
-            border-bottom: 1px solid var(--line);
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
 
-            background: rgba(255,255,255,0.16);
+    .approach-flow {
+        grid-template-columns: repeat(2,1fr);
+    }
 
-            transition:
-                background 0.3s ease,
-                transform 0.3s ease;
-        }
+    .tool-grid {
+        grid-template-columns: repeat(3,1fr);
+    }
 
-        .coverage:hover {
-            background: white;
-            transform: translateY(-5px);
-        }
+    .project {
+        grid-template-columns: 65px 1fr;
+    }
 
-        .coverage-icon {
-            width: 38px;
-            height: 38px;
+    .project-side {
+        grid-column: 2;
+        min-height: 330px;
+    }
 
-            display: grid;
-            place-items: center;
+    .coverage-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
 
-            background: var(--ink);
-            color: white;
+    .certificate-layout {
+        grid-template-columns: 1fr;
+    }
+}
 
-            margin-bottom: 28px;
-        }
+@media (max-width: 720px) {
 
-        .coverage h3 {
-            font-family: var(--display);
-            font-size: 20px;
+    .container,
+    .nav-inner,
+    .hero-grid,
+    .hero-meta-inner {
+        width: min(calc(100% - 30px), var(--container));
+    }
 
-            margin-bottom: 9px;
-        }
+    .nav-inner {
+        height: 68px;
+    }
 
-        .coverage p {
-            font-size: 13px;
-            line-height: 1.65;
+    .nav-links {
+        display: none;
 
-            color: var(--muted);
-        }
+        position: absolute;
 
+        left: 15px;
+        right: 15px;
+        top: 68px;
 
-        /* =========================================================
-           CERTIFICATION
-        ========================================================== */
+        padding: 20px;
 
-        .cert-grid {
-            display: grid;
-            grid-template-columns: 0.7fr 1.3fr;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
 
-            gap: 70px;
+        background: var(--paper);
 
-            align-items: center;
-        }
+        border: 1px solid var(--line);
+    }
 
-        .certificate-image {
-            border: 1px solid var(--line);
+    .nav-links.open {
+        display: flex;
+    }
 
-            background: white;
+    .nav-contact {
+        display: none;
+    }
 
-            padding: 12px;
+    .mobile-menu {
+        display: grid;
+        place-items: center;
+    }
 
-            box-shadow:
-                12px 12px 0 var(--ink);
+    .hero {
+        min-height: auto;
+    }
 
-            transition:
-                transform 0.4s ease,
-                box-shadow 0.4s ease;
-        }
+    .hero-grid {
+        min-height: auto;
+    }
 
-        .certificate-image:hover {
-            transform: translateY(-7px);
-            box-shadow:
-                18px 18px 0 var(--accent);
-        }
+    .hero-title {
+        font-size: clamp(52px,15vw,82px);
+    }
 
-        .certificate-image img {
-            width: 100%;
-        }
+    .hero-description {
+        font-size: 16px;
+    }
 
-        .cert-content .section-title {
-            margin-bottom: 25px;
-        }
+    .hero-visual {
+        min-height: 420px;
+    }
 
-        .cert-description {
-            max-width: 650px;
+    .portrait-frame {
+        width: min(320px,88%);
+    }
 
-            font-size: 16px;
-            line-height: 1.8;
+    .portrait-number {
+        display: none;
+    }
 
-            color: var(--ink-soft);
+    .hero-meta-inner {
+        grid-template-columns: repeat(2,1fr);
+    }
 
-            margin-bottom: 25px;
-        }
+    .meta-box {
+        border-bottom: 1px solid var(--line);
+    }
 
-        .cert-meta {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+    .meta-box:nth-child(2) {
+        border-right: none;
+    }
 
-            border-top: 1px solid var(--line);
-        }
+    .meta-box:nth-child(3),
+    .meta-box:nth-child(4) {
+        border-bottom: none;
+    }
 
-        .cert-meta-item {
-            padding: 18px 0;
+    .section {
+        padding: 85px 0;
+    }
 
-            border-bottom: 1px solid var(--line);
-        }
+    .section-header {
+        grid-template-columns: 55px 1fr;
+        gap: 12px;
+        margin-bottom: 45px;
+    }
 
-        .cert-meta-item:nth-child(odd) {
-            border-right: 1px solid var(--line);
-            padding-right: 20px;
-        }
+    .section-title {
+        font-size: 43px;
+    }
 
-        .cert-meta-item:nth-child(even) {
-            padding-left: 20px;
-        }
+    .projects-intro {
+        margin: -20px 0 45px 67px;
+        font-size: 15px;
+    }
 
-        .cert-meta-label {
-            display: block;
+    .approach-flow {
+        grid-template-columns: 1fr;
+    }
 
-            font-family: var(--mono);
-            font-size: 8px;
+    .tool-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
 
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
+    .project {
+        display: block;
+    }
 
-            color: var(--muted);
+    .project-index {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
 
-            margin-bottom: 6px;
-        }
+        padding: 17px 20px;
+    }
 
-        .cert-meta-value {
-            font-weight: 700;
-            font-size: 14px;
-        }
+    .project-main {
+        padding: 30px 25px;
+    }
 
+    .project-side {
+        min-height: 350px;
+        padding: 30px 25px;
+    }
 
-        /* =========================================================
-           CONTACT
-        ========================================================== */
+    .project-result {
+        left: 25px;
+        right: 25px;
+        bottom: 25px;
+    }
 
-        .contact-section {
-            background: var(--accent);
-            color: white;
+    .coverage-grid {
+        grid-template-columns: 1fr;
+    }
 
-            border-bottom: none;
-        }
+    .contact-title {
+        font-size: 55px;
+    }
 
-        .contact-section .section-number,
-        .contact-section .section-label {
-            color: rgba(255,255,255,0.6);
-        }
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
 
-        .contact-section .section-title {
-            max-width: 850px;
-        }
+@media (max-width: 430px) {
 
-        .contact-section .section-title span {
-            color: rgba(255,255,255,0.45);
-        }
+    .hero-specialties {
+        gap: 6px;
+    }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 0.8fr;
+    .specialty {
+        font-size: 8px;
+    }
 
-            gap: 80px;
+    .hero-actions,
+    .contact-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
 
-            align-items: end;
-        }
+    .button,
+    .contact-button {
+        width: 100%;
+    }
 
-        .contact-text {
-            max-width: 650px;
+    .tool-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 
-            font-size: 18px;
-            line-height: 1.75;
+    .tool {
+        min-height: 125px;
+        padding: 18px;
+    }
 
-            color: rgba(255,255,255,0.8);
+    .tool-name {
+        font-size: 12px;
+    }
+}
 
-            margin-top: 28px;
-        }
-
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-
-            border-top: 1px solid rgba(255,255,255,0.3);
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding: 19px 0;
-
-            border-bottom: 1px solid rgba(255,255,255,0.3);
-
-            font-family: var(--mono);
-            font-size: 10px;
-
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-
-            transition:
-                padding 0.25s ease;
-        }
-
-        .contact-link:hover {
-            padding-left: 10px;
-        }
-
-        .contact-link-left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .contact-link img {
-            width: 18px;
-            height: 18px;
-            filter: brightness(0) invert(1);
-        }
-
-
-        /* =========================================================
-           FOOTER
-        ========================================================== */
-
-        footer {
-            background: var(--ink);
-            color: #aaa;
-
-            padding: 26px 0;
-        }
-
-        .footer-inner {
-            width: min(
-                calc(100% - 48px),
-                var(--container)
-            );
-
-            margin-inline: auto;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 20px;
-        }
-
-        .footer-left {
-            font-family: var(--mono);
-            font-size: 8px;
-
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .footer-right {
-            font-family: var(--mono);
-            font-size: 8px;
-
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-
-        /* =========================================================
-           REVEAL ANIMATION
-        ========================================================== */
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(25px);
-
-            transition:
-                opacity 0.7s ease,
-                transform 0.7s cubic-bezier(.2,.8,.2,1);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-
-        /* =========================================================
-           PROJECT MOTION
-        ========================================================== */
-
-        .project {
-            opacity: 0;
-            transform: translateY(45px) scale(0.98);
-
-            transition:
-                opacity 0.7s ease,
-                transform 0.7s cubic-bezier(.2,.8,.2,1);
-        }
-
-        .project.project-visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-
-        .project:nth-child(2) {
-            transition-delay: 0.08s;
-        }
-
-        .project:nth-child(3) {
-            transition-delay: 0.16s;
-        }
-
-        .project:nth-child(4) {
-            transition-delay: 0.24s;
-        }
-
-
-        /* =========================================================
-           MOBILE
-        ========================================================== */
-
-        @media (max-width: 1050px) {
-
-            .hero-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-visual {
-                min-height: auto;
-                padding-top: 30px;
-            }
-
-            .portrait-frame {
-                width: min(400px, 85%);
-            }
-
-            .about-grid,
-            .cert-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .approach-flow {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .tool-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            .project {
-                grid-template-columns: 65px 1fr;
-            }
-
-            .project-side {
-                grid-column: 2;
-            }
-
-            .coverage-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-
-        @media (max-width: 780px) {
-
-            .container,
-            .nav-inner,
-            .hero-grid,
-            .hero-meta-inner,
-            .footer-inner {
-                width: min(
-                    calc(100% - 32px),
-                    var(--container)
-                );
-            }
-
-            .nav-inner {
-                height: 68px;
-            }
-
-            .nav-links,
-            .nav-contact {
-                display: none;
-            }
-
-            .mobile-menu {
-                display: grid;
-                place-items: center;
-            }
-
-            .hero {
-                min-height: auto;
-            }
-
-            .hero-grid {
-                padding: 65px 0 45px;
-                gap: 45px;
-            }
-
-            .hero-title {
-                font-size: clamp(56px, 16vw, 90px);
-            }
-
-            .hero-description {
-                font-size: 16px;
-            }
-
-            .hero-meta-inner {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .meta-box {
-                border-bottom: 1px solid var(--line);
-            }
-
-            .meta-box:nth-child(2) {
-                border-right: none;
-            }
-
-            .meta-box:nth-child(3) {
-                padding-left: 0;
-            }
-
-            .section {
-                padding: 85px 0;
-            }
-
-            .section-header {
-                grid-template-columns: 55px 1fr;
-                gap: 10px;
-                margin-bottom: 45px;
-            }
-
-            .projects-intro {
-                margin-left: 65px;
-                margin-top: -20px;
-                margin-bottom: 50px;
-            }
-
-            .tool-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .approach-flow {
-                grid-template-columns: 1fr;
-            }
-
-            .approach-card {
-                min-height: auto;
-                border-left: 1px solid #3b3b3b;
-            }
-
-            .project {
-                grid-template-columns: 50px 1fr;
-            }
-
-            .project-main {
-                padding: 30px 24px;
-            }
-
-            .project-side {
-                padding: 30px 24px;
-            }
-
-            .project h3 {
-                font-size: 40px;
-            }
-
-            .project-tools {
-                flex-wrap: wrap;
-            }
-
-            .coverage-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cert-grid {
-                gap: 50px;
-            }
-
-            .footer-inner {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-
-
-        @media (max-width: 480px) {
-
-            .hero-title {
-                font-size: 55px;
-            }
-
-            .hero-actions {
-                flex-direction: column;
-            }
-
-            .button {
-                width: 100%;
-            }
-
-            .portrait-frame {
-                width: 82%;
-            }
-
-            .meta-box {
-                padding: 18px 0;
-            }
-
-            .meta-box:not(:first-child) {
-                padding-left: 15px;
-            }
-
-            .section-title {
-                font-size: 40px;
-            }
-
-            .projects-intro {
-                margin-left: 0;
-            }
-
-            .project {
-                grid-template-columns: 1fr;
-            }
-
-            .project-index {
-                border-right: none;
-                border-bottom: 1px solid var(--line);
-                padding: 15px 20px;
-            }
-
-            .project-side {
-                grid-column: auto;
-            }
-
-            .cert-meta {
-                grid-template-columns: 1fr;
-            }
-
-            .cert-meta-item:nth-child(odd) {
-                border-right: none;
-                padding-right: 0;
-            }
-
-            .cert-meta-item:nth-child(even) {
-                padding-left: 0;
-            }
-        }
-
-    </style>
+</style>
 </head>
 
 
@@ -1822,2521 +1590,1970 @@
 <div class="top-line"></div>
 
 
-<div class="site">
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
 
-    <!-- =========================================================
-         NAVIGATION
-    ========================================================== -->
+<nav class="nav">
 
-    <header class="nav">
+    <div class="nav-inner">
 
-        <div class="nav-inner">
+        <a href="#home" class="brand">
 
-            <a href="#home" class="brand">
+            <div class="brand-mark">
+                VA
+            </div>
 
-                <div class="brand-mark">
-                    VA
-                </div>
+            <div class="brand-text">
+                VEERESH<span>.</span>
+            </div>
 
-                <div class="brand-text">
-                    VEERESH<span>.</span>
-                </div>
+        </a>
 
+
+        <div class="nav-links" id="navLinks">
+
+            <a href="#about" class="nav-link">
+                About
             </a>
 
-
-            <nav class="nav-links">
-
-                <a href="#about" class="nav-link">
-                    About
-                </a>
-
-                <a href="#stack" class="nav-link">
-                    Stack
-                </a>
-
-                <a href="#projects" class="nav-link">
-                    Projects
-                </a>
-
-                <a href="#approach" class="nav-link">
-                    QA Approach
-                </a>
-
-                <a href="#certification" class="nav-link">
-                    Certification
-                </a>
-
-            </nav>
-
-
-            <a
-                href="#contact"
-                class="nav-contact"
-            >
-                Let's Connect
-                <i data-lucide="arrow-up-right" width="14"></i>
+            <a href="#stack" class="nav-link">
+                Stack
             </a>
 
+            <a href="#projects" class="nav-link">
+                Projects
+            </a>
 
-            <button
-                class="mobile-menu"
-                aria-label="Open menu"
-            >
-                <i data-lucide="menu" width="18"></i>
-            </button>
+            <a href="#coverage" class="nav-link">
+                QA Coverage
+            </a>
+
+            <a href="#certification" class="nav-link">
+                Certification
+            </a>
 
         </div>
 
-    </header>
 
-
-
-    <main>
-
-        <!-- =====================================================
-             HERO
-        ====================================================== -->
-
-        <section
-            id="home"
-            class="hero"
+        <a
+            href="#contact"
+            class="nav-contact"
         >
-
-            <div class="hero-grid">
-
-                <div class="hero-content reveal">
-
-                    <div class="availability">
-
-                        <span class="availability-dot"></span>
-
-                        Available for QA Opportunities
-
-                    </div>
+            Let's Connect
+        </a>
 
 
-                    <p class="hero-kicker">
-                        QA ENGINEER / SOFTWARE TESTING
-                    </p>
+        <button
+            class="mobile-menu"
+            id="mobileMenu"
+            aria-label="Open navigation"
+        >
+            <i data-lucide="menu"></i>
+        </button>
+
+    </div>
+
+</nav>
 
 
-                    <h1 class="hero-title">
 
-                        Quality isn't
+<!-- =========================================================
+     HERO
+========================================================= -->
 
-                        <span class="outline">
-                            just tested.
-                        </span>
+<section class="hero" id="home">
 
-                        <span>
-                            It's proven.
-                        </span>
+    <div class="hero-grid">
 
-                    </h1>
+        <div class="hero-content reveal">
 
+            <div class="availability">
 
-                    <p class="hero-description">
+                <span class="availability-dot"></span>
 
-                        I approach software quality from three angles:
-                        the user's experience, the system's behaviour and
-                        the risks that could break it.
+                Open to QA opportunities
 
-                    </p>
+            </div>
 
 
-                    <div class="hero-specialties">
-
-                        <span class="specialty">
-                            Manual Testing
-                        </span>
-
-                        <span class="specialty">
-                            API Testing
-                        </span>
-
-                        <span class="specialty">
-                            Automation
-                        </span>
-
-                        <span class="specialty">
-                            Mobile Testing
-                        </span>
-
-                        <span class="specialty">
-                            Performance
-                        </span>
-
-                        <span class="specialty">
-                            Security
-                        </span>
-
-                    </div>
+            <p class="hero-kicker">
+                QA Engineer / Software Testing
+            </p>
 
 
-                    <div class="hero-actions">
+            <h1 class="hero-title">
 
-                        <a
-                            href="#projects"
-                            class="button button-primary"
-                        >
-                            View My Projects
-                            <i data-lucide="arrow-up-right" width="16"></i>
-                        </a>
+                <span>
+                    Quality isn't
+                </span>
+
+                <span class="outline">
+                    just tested.
+                </span>
+
+                <span>
+                    It's proven.
+                </span>
+
+            </h1>
 
 
-                        <!-- Replace this URL with your actual https://www.linkedin.com/in/veeresh-avanti-590282283/ profile URL -->
-                        <a
-                            href="https://www.https://www.linkedin.com/in/veeresh-avanti-590282283/.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="button button-secondary"
-                        >
+            <p class="hero-description">
 
-                            <img
-                                class="https://www.linkedin.com/in/veeresh-avanti-590282283/-icon"
-                                src="https://cdn.simpleicons.org/https://www.linkedin.com/in/veeresh-avanti-590282283//0A66C2"
-                                alt="https://www.linkedin.com/in/veeresh-avanti-590282283/"
-                            >
+                I test software by understanding the product,
+                identifying risk, validating behaviour and
+                challenging the system before users do.
 
-                            https://www.linkedin.com/in/veeresh-avanti-590282283/
+            </p>
 
-                        </a>
 
-                    </div>
+            <div class="hero-specialties">
+
+                <span class="specialty">
+                    Manual Testing
+                </span>
+
+                <span class="specialty">
+                    API Testing
+                </span>
+
+                <span class="specialty">
+                    Automation
+                </span>
+
+                <span class="specialty">
+                    Mobile Testing
+                </span>
+
+                <span class="specialty">
+                    Performance
+                </span>
+
+                <span class="specialty">
+                    Security
+                </span>
+
+            </div>
+
+
+            <div class="hero-actions">
+
+                <a
+                    href="#projects"
+                    class="button button-primary"
+                >
+                    View My Projects
+
+                    <i data-lucide="arrow-down-right"></i>
+                </a>
+
+
+                <a
+                    href="https://www.linkedin.com/in/veeresh-avanti-590282283/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button button-secondary"
+                >
+
+                    <img
+                        class="linkedin-icon"
+                        src="https://cdn.simpleicons.org/linkedin/0A66C2"
+                        alt="LinkedIn"
+                    >
+
+                    LinkedIn
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual reveal">
+
+            <div class="portrait-frame">
+
+                <span class="portrait-label top">
+                    QA Engineer
+                </span>
+
+
+                <img
+                    src="images/veeresh-avanti-profile.png"
+                    alt="Veeresh Avanti - QA Engineer"
+                    class="portrait"
+                >
+
+
+                <span class="portrait-label bottom">
+                    Bengaluru / India
+                </span>
+
+            </div>
+
+
+            <span class="portrait-number">
+                SOFTWARE QUALITY / 01
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-meta">
+
+        <div class="hero-meta-inner">
+
+            <div class="meta-box">
+
+                <span class="meta-number">
+                    05+
+                </span>
+
+                <span class="meta-label">
+                    Testing Areas
+                </span>
+
+            </div>
+
+
+            <div class="meta-box">
+
+                <span class="meta-number">
+                    09+
+                </span>
+
+                <span class="meta-label">
+                    Testing Tools
+                </span>
+
+            </div>
+
+
+            <div class="meta-box">
+
+                <span class="meta-number">
+                    04
+                </span>
+
+                <span class="meta-label">
+                    Project Case Studies
+                </span>
+
+            </div>
+
+
+            <div class="meta-box">
+
+                <span class="meta-number">
+                    QA
+                </span>
+
+                <span class="meta-label">
+                    Engineering Focus
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section class="section" id="about">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <div class="section-number">
+                01
+            </div>
+
+            <div>
+
+                <p class="section-label">
+                    About Me
+                </p>
+
+                <h2 class="section-title">
+
+                    I don't just look for bugs.
+
+                    <span>
+                        I investigate why they happen.
+                    </span>
+
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="reveal">
+
+                <p class="about-lead">
+
+                    I am a QA Engineer focused on building
+
+                    <span>
+                        confidence in software
+                    </span>
+
+                    before it reaches the user.
+
+                </p>
+
+
+                <p class="about-copy">
+
+                    My testing experience covers web applications,
+                    mobile applications and APIs, with hands-on
+                    exposure to functional testing, regression,
+                    exploratory testing, API validation,
+                    automation, performance testing and
+                    security testing.
+
+                </p>
+
+
+                <p class="about-copy">
+
+                    I approach a product by understanding the
+                    business workflow first, identifying risk areas,
+                    designing meaningful test scenarios and then
+                    validating behaviour across positive, negative
+                    and edge-case conditions.
+
+                </p>
+
+            </div>
+
+
+            <div class="about-side reveal">
+
+                <div class="about-row">
+
+                    <span class="about-label">
+                        Role
+                    </span>
+
+                    <span class="about-value">
+                        QA Engineer
+                    </span>
 
                 </div>
 
 
+                <div class="about-row">
 
-                <!-- =================================================
-                     PROFILE
-                ================================================== -->
+                    <span class="about-label">
+                        Location
+                    </span>
 
-                <div class="hero-visual reveal">
+                    <span class="about-value">
+                        Bengaluru, India
+                    </span>
 
-                    <div class="portrait-frame">
-
-                        <span class="portrait-label top">
-                            QA ENGINEER
-                        </span>
-
-
-                        <img
-                            src="images/veeresh-avanti-profile.png"
-                            alt="Veeresh Avanti - QA Engineer"
-                            class="portrait"
-                        >
+                </div>
 
 
-                        <span class="portrait-label bottom">
-                            Bengaluru / India
-                        </span>
+                <div class="about-row">
 
-                    </div>
+                    <span class="about-label">
+                        Testing
+                    </span>
+
+                    <span class="about-value">
+                        Manual + Automation
+                    </span>
+
+                </div>
 
 
-                    <span class="portrait-number">
-                        SOFTWARE QUALITY / 01
+                <div class="about-row">
+
+                    <span class="about-label">
+                        API
+                    </span>
+
+                    <span class="about-value">
+                        REST / Postman / JWT
+                    </span>
+
+                </div>
+
+
+                <div class="about-row">
+
+                    <span class="about-label">
+                        Focus
+                    </span>
+
+                    <span class="about-value">
+                        Quality Engineering
                     </span>
 
                 </div>
 
             </div>
 
+        </div>
 
-            <!-- HERO META -->
+    </div>
 
-            <div class="hero-meta">
-
-                <div class="hero-meta-inner">
-
-                    <div class="meta-box">
-
-                        <span class="meta-number">
-                            05+
-                        </span>
-
-                        <span class="meta-label">
-                            Testing Areas
-                        </span>
-
-                    </div>
+</section>
 
 
-                    <div class="meta-box">
 
-                        <span class="meta-number">
-                            09+
-                        </span>
+<!-- =========================================================
+     TESTING APPROACH
+========================================================= -->
 
-                        <span class="meta-label">
-                            Testing Tools
-                        </span>
+<section class="section approach">
 
-                    </div>
+    <div class="container">
 
+        <div class="section-header reveal">
 
-                    <div class="meta-box">
-
-                        <span class="meta-number">
-                            04
-                        </span>
-
-                        <span class="meta-label">
-                            Real Projects
-                        </span>
-
-                    </div>
-
-
-                    <div class="meta-box">
-
-                        <span class="meta-number">
-                            QA
-                        </span>
-
-                        <span class="meta-label">
-                            Engineering Focus
-                        </span>
-
-                    </div>
-
-                </div>
-
+            <div class="section-number">
+                02
             </div>
 
-        </section>
+            <div>
 
-
-
-        <!-- =====================================================
-             ABOUT
-        ====================================================== -->
-
-        <section
-            id="about"
-            class="section"
-        >
-
-            <div class="container">
-
-                <div class="section-header reveal">
-
-                    <div class="section-number">
-                        01
-                    </div>
-
-                    <div>
-
-                        <p class="section-label">
-                            About Me
-                        </p>
-
-                        <h2 class="section-title">
-
-                            I don't just look for bugs.
-
-                            <span>
-                                I investigate why they happen.
-                            </span>
-
-                        </h2>
-
-                    </div>
-
-                </div>
-
-
-                <div class="about-grid">
-
-                    <div class="reveal">
-
-                        <p class="about-lead">
-
-                            I am a QA Engineer focused on building
-                            <span>confidence in software</span>
-                            before it reaches the user.
-
-                        </p>
-
-
-                        <p class="about-copy">
-
-                            My testing experience covers web applications,
-                            mobile applications and APIs, with hands-on
-                            exposure to functional testing, regression,
-                            exploratory testing, API validation,
-                            automation, performance testing and
-                            security testing.
-
-                        </p>
-
-
-                        <p class="about-copy">
-
-                            I approach a product by understanding the
-                            business workflow first, identifying risk areas,
-                            designing meaningful test scenarios and then
-                            validating behaviour across positive, negative
-                            and edge-case conditions.
-
-                        </p>
-
-                    </div>
-
-
-                    <div class="about-side reveal">
-
-                        <div class="about-side-row">
-
-                            <span class="about-side-label">
-                                Role
-                            </span>
-
-                            <span class="about-side-value">
-                                QA Engineer
-                            </span>
-
-                        </div>
-
-
-                        <div class="about-side-row">
-
-                            <span class="about-side-label">
-                                Focus
-                            </span>
-
-                            <span class="about-side-value">
-                                Quality Engineering
-                            </span>
-
-                        </div>
-
-
-                        <div class="about-side-row">
-
-                            <span class="about-side-label">
-                                Testing
-                            </span>
-
-                            <span class="about-side-value">
-                                Web / Mobile / API
-                            </span>
-
-                        </div>
-
-
-                        <div class="about-side-row">
-
-                            <span class="about-side-label">
-                                Location
-                            </span>
-
-                            <span class="about-side-value">
-                                Bengaluru, India
-                            </span>
-
-                        </div>
-
-
-                        <div class="about-side-row">
-
-                            <span class="about-side-label">
-                                Approach
-                            </span>
-
-                            <span class="about-side-value">
-                                Risk-Based Testing
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             TESTING APPROACH
-        ====================================================== -->
-
-        <section
-            id="approach"
-            class="section approach"
-        >
-
-            <div class="container">
-
-                <div class="section-header reveal">
-
-                    <div class="section-number">
-                        02
-                    </div>
-
-                    <div>
-
-                        <p class="section-label">
-                            QA Approach
-                        </p>
-
-                        <h2 class="section-title">
-
-                            Understand.
-                            Analyze.
-                            Test.
-
-                            <span>
-                                Break it. Verify it.
-                            </span>
-
-                        </h2>
-
-                    </div>
-
-                </div>
-
-
-                <div class="approach-flow">
-
-                    <article class="approach-card reveal">
-
-                        <div class="approach-index">
-                            01 / UNDERSTAND
-                        </div>
-
-                        <h3>
-                            Understand
-                        </h3>
-
-                        <p>
-                            Study requirements, user journeys,
-                            business rules and expected behaviour
-                            before designing test coverage.
-                        </p>
-
-                    </article>
-
-
-                    <article class="approach-card reveal">
-
-                        <div class="approach-index">
-                            02 / ANALYZE
-                        </div>
-
-                        <h3>
-                            Analyze
-                        </h3>
-
-                        <p>
-                            Identify risks, dependencies,
-                            boundary conditions and areas where
-                            failures could have the highest impact.
-                        </p>
-
-                    </article>
-
-
-                    <article class="approach-card reveal">
-
-                        <div class="approach-index">
-                            03 / TEST
-                        </div>
-
-                        <h3>
-                            Test
-                        </h3>
-
-                        <p>
-                            Validate functional flows, APIs,
-                            mobile behaviour, integrations,
-                            data and business logic.
-                        </p>
-
-                    </article>
-
-
-                    <article class="approach-card reveal">
-
-                        <div class="approach-index">
-                            04 / BREAK
-                        </div>
-
-                        <h3>
-                            Break
-                        </h3>
-
-                        <p>
-                            Challenge the happy path with
-                            invalid input, unexpected sequences,
-                            authorization and edge cases.
-                        </p>
-
-                    </article>
-
-
-                    <article class="approach-card reveal">
-
-                        <div class="approach-index">
-                            05 / VERIFY
-                        </div>
-
-                        <h3>
-                            Verify
-                        </h3>
-
-                        <p>
-                            Validate fixes, perform regression
-                            testing and confirm the system behaves
-                            correctly after changes.
-                        </p>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             TESTING STACK
-        ====================================================== -->
-
-        <section
-            id="stack"
-            class="section"
-        >
-
-            <div class="container">
-
-                <div class="section-header reveal">
-
-                    <div class="section-number">
-                        03
-                    </div>
-
-                    <div>
-
-                        <p class="section-label">
-                            Testing Stack
-                        </p>
-
-                        <h2 class="section-title">
-
-                            The tools I use
-                            <span>
-                                to investigate quality.
-                            </span>
-
-                        </h2>
-
-                    </div>
-
-                </div>
-
-
-                <p class="stack-intro reveal">
-
-                    Tools are only useful when they solve the right testing
-                    problem. My stack covers API validation, browser and
-                    mobile automation, performance analysis, security
-                    testing and development workflows.
-
+                <p class="section-label">
+                    Testing Approach
                 </p>
 
+                <h2 class="section-title">
 
-                <div class="tool-grid">
+                    A defect is only the beginning.
 
-                    <!-- Postman -->
-                    <article class="tool reveal">
+                    <span>
+                        The investigation matters.
+                    </span>
 
-                        <img
-                            src="https://cdn.simpleicons.org/postman"
-                            alt="Postman"
-                        >
-
-                        <div>
-
-                            <div class="tool-name">
-                                Postman
-                            </div>
-
-                            <div class="tool-type">
-                                API Testing
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Playwright -->
-                    <article class="tool reveal">
-
-                        <img
-                            src="https://cdn.simpleicons.org/playwright"
-                            alt="Playwright"
-                        >
-
-                        <div>
-
-                            <div class="tool-name">
-                                Playwright
-                            </div>
-
-                            <div class="tool-type">
-                                Automation
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Selenium -->
-                    <article class="tool reveal">
-
-                        <img
-                            src="https://cdn.simpleicons.org/selenium"
-                            alt="Selenium"
-                        >
-
-                        <div>
-
-                            <div class="tool-name">
-                                Selenium
-                            </div>
-
-                            <div class="tool-type">
-                                Automation
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Appium -->
-                    <article class="tool reveal">
-
-                        <img
-                            src="https://cdn.simpleicons.org/appium"
-                            alt="Appium"
-                        >
-
-                        <div>
-
-                            <div class="tool-name">
-                                Appium
-                            </div>
-
-                            <div class="tool-type">
-                                Mobile Automation
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- JMeter -->
-                    <article class="tool reveal">
-
-                        <img
-                            src="https://cdn.simpleicons.org/apachejmeter"
-                            alt="Apache JMeter"
-                        >
-
-                        <div>
-
-                            <div class="tool-name">
-                                JMeter
-                            </div>
-
-                            <div class="tool-type">
-                                Performance
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Java -->
-                    <article class="tool reveal">
-
-                        <img
-                            src="https://cdn.simpleicons.org/java"
-                            alt="Java"
-                        >
-
-                        <div>
-
-                            <div class="tool-name">
-                                Java
-                            </div>
-
-                            <div class="tool-type">
-                                Automation
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- OWASP -->
-                    <article class="tool reveal">
-
-                        <img
-                            src="https://cdn.simpleicons.org/owasp"
-                            alt="OWASP"
-                        >
-
-                        <div>
-
-                            <div class="tool-name">
-                                OWASP ZAP
-                            </div>
-
-                            <div class="tool-type">
-                                Security Testing
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Git -->
-                    <article class="tool reveal">
-
-                        <img
-                            src="https://cdn.simpleicons.org/git"
-                            alt="Git"
-                        >
-
-                        <div>
-
-                            <div class="tool-name">
-                                Git
-                            </div>
-
-                            <div class="tool-type">
-                                Version Control
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- GitHub -->
-                    <article class="tool reveal">
-
-                        <img
-                            src="https://cdn.simpleicons.org/github"
-                            alt="GitHub"
-                        >
-
-                        <div>
-
-                            <div class="tool-name">
-                                GitHub
-                            </div>
-
-                            <div class="tool-type">
-                                Collaboration
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Android Studio -->
-                    <article class="tool reveal">
-
-                        <img
-                            src="https://cdn.simpleicons.org/androidstudio"
-                            alt="Android Studio"
-                        >
-
-                        <div>
-
-                            <div class="tool-name">
-                                Android Studio
-                            </div>
-
-                            <div class="tool-type">
-                                Mobile Testing
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- SQL -->
-                    <article class="tool reveal">
-
-                        <img
-                            src="https://cdn.simpleicons.org/mysql"
-                            alt="SQL"
-                        >
-
-                        <div>
-
-                            <div class="tool-name">
-                                SQL
-                            </div>
-
-                            <div class="tool-type">
-                                Data Validation
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Node -->
-                    <article class="tool reveal">
-
-                        <img
-                            src="https://cdn.simpleicons.org/nodedotjs"
-                            alt="Node.js"
-                        >
-
-                        <div>
-
-                            <div class="tool-name">
-                                Node.js
-                            </div>
-
-                            <div class="tool-type">
-                                Test Environment
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- ZAP -->
-                    <article class="tool reveal">
-
-                        <img
-                            src="https://cdn.simpleicons.org/zaproxy"
-                            alt="ZAP"
-                        >
-
-                        <div>
-
-                            <div class="tool-name">
-                                ZAP
-                            </div>
-
-                            <div class="tool-type">
-                                Security
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Azure -->
-                    <article class="tool reveal">
-
-                        <img
-                            src="https://cdn.simpleicons.org/microsoftazure"
-                            alt="Microsoft Azure"
-                        >
-
-                        <div>
-
-                            <div class="tool-name">
-                                Azure
-                            </div>
-
-                            <div class="tool-type">
-                                Platform
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Docker -->
-                    <article class="tool reveal">
-
-                        <img
-                            src="https://cdn.simpleicons.org/docker"
-                            alt="Docker"
-                        >
-
-                        <div>
-
-                            <div class="tool-name">
-                                Docker
-                            </div>
-
-                            <div class="tool-type">
-                                Environment
-                            </div>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             PROJECTS
-        ====================================================== -->
-
-        <section
-            id="projects"
-            class="section projects-section"
-        >
-
-            <div class="container">
-
-                <div class="section-header reveal">
-
-                    <div class="section-number">
-                        04
-                    </div>
-
-                    <div>
-
-                        <p class="section-label">
-                            Selected Projects
-                        </p>
-
-                        <h2 class="section-title">
-
-                            Systems I've tested.
-
-                            <span>
-                                Work that shows how I think.
-                            </span>
-
-                        </h2>
-
-                    </div>
-
-                </div>
-
-
-                <p class="projects-intro reveal">
-
-                    These projects represent hands-on QA work across
-                    logistics, sports technology, mobile applications
-                    and API performance. Each project required more than
-                    checking whether a button worked — the testing focused
-                    on workflows, integrations, permissions, data,
-                    reliability and risk.
-
-                </p>
-
-
-                <div class="projects-list">
-
-
-                    <!-- =================================================
-                         PROJECT 01
-                    ================================================== -->
-
-                    <article class="project">
-
-                        <div class="project-index">
-                            01
-                        </div>
-
-
-                        <div class="project-main">
-
-                            <div class="project-top">
-
-                                <span class="project-category">
-                                    LOGISTICS / DELIVERY PLATFORM
-                                </span>
-
-                                <span class="project-status">
-                                    TESTED
-                                </span>
-
-                            </div>
-
-
-                            <h3>
-                                NIKKOU<br>
-                                PORTER
-                            </h3>
-
-
-                            <p class="project-description">
-
-                                A logistics and parcel-delivery ecosystem
-                                involving Customer, Driver and Admin
-                                applications. Testing covered the complete
-                                journey from order creation and driver
-                                assignment through delivery, wallet,
-                                commission and administrative workflows.
-
-                            </p>
-
-
-                            <div class="project-focus">
-
-                                <span>
-                                    Functional
-                                </span>
-
-                                <span>
-                                    API
-                                </span>
-
-                                <span>
-                                    RBAC
-                                </span>
-
-                                <span>
-                                    KYC
-                                </span>
-
-                                <span>
-                                    Payment
-                                </span>
-
-                                <span>
-                                    Performance
-                                </span>
-
-                                <span>
-                                    Security
-                                </span>
-
-                            </div>
-
-
-                            <div class="project-tools">
-
-                                <span class="project-tool">
-
-                                    <img
-                                        src="https://cdn.simpleicons.org/postman"
-                                        alt=""
-                                    >
-
-                                    Postman
-
-                                </span>
-
-
-                                <span class="project-tool">
-
-                                    <img
-                                        src="https://cdn.simpleicons.org/apachejmeter"
-                                        alt=""
-                                    >
-
-                                    JMeter
-
-                                </span>
-
-
-                                <span class="project-tool">
-
-                                    <img
-                                        src="https://cdn.simpleicons.org/zaproxy"
-                                        alt=""
-                                    >
-
-                                    OWASP ZAP
-
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="project-side">
-
-                            <span class="project-side-label">
-                                Testing Coverage
-                            </span>
-
-
-                            <div class="project-workflow">
-
-                                <div class="workflow-item">
-
-                                    <span class="workflow-number">
-                                        01
-                                    </span>
-
-                                    <span class="workflow-text">
-                                        Customer Order Flow
-                                    </span>
-
-                                </div>
-
-
-                                <div class="workflow-item">
-
-                                    <span class="workflow-number">
-                                        02
-                                    </span>
-
-                                    <span class="workflow-text">
-                                        Driver Assignment
-                                    </span>
-
-                                </div>
-
-
-                                <div class="workflow-item">
-
-                                    <span class="workflow-number">
-                                        03
-                                    </span>
-
-                                    <span class="workflow-text">
-                                        Admin & RBAC
-                                    </span>
-
-                                </div>
-
-
-                                <div class="workflow-item">
-
-                                    <span class="workflow-number">
-                                        04
-                                    </span>
-
-                                    <span class="workflow-text">
-                                        Wallet & Payment
-                                    </span>
-
-                                </div>
-
-
-                                <div class="workflow-item">
-
-                                    <span class="workflow-number">
-                                        05
-                                    </span>
-
-                                    <span class="workflow-text">
-                                        API & Security
-                                    </span>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="project-result">
-
-                                <span class="project-result-label">
-                                    QA Focus
-                                </span>
-
-                                <p class="project-result-text">
-
-                                    Validated critical business flows,
-                                    authorization boundaries, API behaviour,
-                                    payment-related workflows and system
-                                    behaviour under load.
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- =================================================
-                         PROJECT 02
-                    ================================================== -->
-
-                    <article class="project">
-
-                        <div class="project-index">
-                            02
-                        </div>
-
-
-                        <div class="project-main">
-
-                            <div class="project-top">
-
-                                <span class="project-category">
-                                    SPORTS TECHNOLOGY PLATFORM
-                                </span>
-
-                                <span class="project-status">
-                                    TESTED
-                                </span>
-
-                            </div>
-
-
-                            <h3>
-                                MASTER<br>
-                                MY SPORTS
-                            </h3>
-
-
-                            <p class="project-description">
-
-                                An all-in-one sports technology ecosystem
-                                connecting venues, coaches, referees,
-                                academies, clubs and players. Testing
-                                involved web and application workflows
-                                covering bookings, vendors, tournaments,
-                                memberships and role-based functionality.
-
-                            </p>
-
-
-                            <div class="project-focus">
-
-                                <span>
-                                    Web Testing
-                                </span>
-
-                                <span>
-                                    Mobile
-                                </span>
-
-                                <span>
-                                    API
-                                </span>
-
-                                <span>
-                                    RBAC
-                                </span>
-
-                                <span>
-                                    Booking
-                                </span>
-
-                                <span>
-                                    Tournament
-                                </span>
-
-                                <span>
-                                    Security
-                                </span>
-
-                            </div>
-
-
-                            <div class="project-tools">
-
-                                <span class="project-tool">
-
-                                    <img
-                                        src="https://cdn.simpleicons.org/postman"
-                                        alt=""
-                                    >
-
-                                    Postman
-
-                                </span>
-
-
-                                <span class="project-tool">
-
-                                    <img
-                                        src="https://cdn.simpleicons.org/zaproxy"
-                                        alt=""
-                                    >
-
-                                    OWASP ZAP
-
-                                </span>
-
-
-                                <span class="project-tool">
-
-                                    <img
-                                        src="https://cdn.simpleicons.org/androidstudio"
-                                        alt=""
-                                    >
-
-                                    Android Studio
-
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="project-side">
-
-                            <span class="project-side-label">
-                                Testing Coverage
-                            </span>
-
-
-                            <div class="project-workflow">
-
-                                <div class="workflow-item">
-
-                                    <span class="workflow-number">
-                                        01
-                                    </span>
-
-                                    <span class="workflow-text">
-                                        Vendor Management
-                                    </span>
-
-                                </div>
-
-
-                                <div class="workflow-item">
-
-                                    <span class="workflow-number">
-                                        02
-                                    </span>
-
-                                    <span class="workflow-text">
-                                        Court & Booking
-                                    </span>
-
-                                </div>
-
-
-                                <div class="workflow-item">
-
-                                    <span class="workflow-number">
-                                        03
-                                    </span>
-
-                                    <span class="workflow-text">
-                                        Tournament Workflows
-                                    </span>
-
-                                </div>
-
-
-                                <div class="workflow-item">
-
-                                    <span class="workflow-number">
-                                        04
-                                    </span>
-
-                                    <span class="workflow-text">
-                                        Role-Based Access
-                                    </span>
-
-                                </div>
-
-
-                                <div class="workflow-item">
-
-                                    <span class="workflow-number">
-                                        05
-                                    </span>
-
-                                    <span class="workflow-text">
-                                        Security Validation
-                                    </span>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="project-result">
-
-                                <span class="project-result-label">
-                                    QA Focus
-                                </span>
-
-                                <p class="project-result-text">
-
-                                    Verified role-specific workflows,
-                                    validations, booking behaviour,
-                                    integrations and unauthorized-access
-                                    scenarios across multiple user roles.
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- =================================================
-                         PROJECT 03
-                    ================================================== -->
-
-                    <article class="project">
-
-                        <div class="project-index">
-                            03
-                        </div>
-
-
-                        <div class="project-main">
-
-                            <div class="project-top">
-
-                                <span class="project-category">
-                                    MOBILE APPLICATION
-                                </span>
-
-                                <span class="project-status">
-                                    TESTED
-                                </span>
-
-                            </div>
-
-
-                            <h3>
-                                CHERRY<br>
-                                SALON
-                            </h3>
-
-
-                            <p class="project-description">
-
-                                A salon discovery and booking application
-                                designed to help users discover salons
-                                around their location, compare services
-                                and pricing, and proceed through booking
-                                workflows. Testing focused on usability,
-                                location and booking behaviour.
-
-                            </p>
-
-
-                            <div class="project-focus">
-
-                                <span>
-                                    Mobile Testing
-                                </span>
-
-                                <span>
-                                    Functional
-                                </span>
-
-                                <span>
-                                    Maps
-                                </span>
-
-                                <span>
-                                    Booking
-                                </span>
-
-                                <span>
-                                    Pricing
-                                </span>
-
-                                <span>
-                                    Validation
-                                </span>
-
-                            </div>
-
-
-                            <div class="project-tools">
-
-                                <span class="project-tool">
-
-                                    <img
-                                        src="https://cdn.simpleicons.org/androidstudio"
-                                        alt=""
-                                    >
-
-                                    Android Studio
-
-                                </span>
-
-
-                                <span class="project-tool">
-
-                                    <img
-                                        src="https://cdn.simpleicons.org/appium"
-                                        alt=""
-                                    >
-
-                                    Appium
-
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="project-side">
-
-                            <span class="project-side-label">
-                                Testing Coverage
-                            </span>
-
-
-                            <div class="project-workflow">
-
-                                <div class="workflow-item">
-
-                                    <span class="workflow-number">
-                                        01
-                                    </span>
-
-                                    <span class="workflow-text">
-                                        Location Discovery
-                                    </span>
-
-                                </div>
-
-
-                                <div class="workflow-item">
-
-                                    <span class="workflow-number">
-                                        02
-                                    </span>
-
-                                    <span class="workflow-text">
-                                        Salon Listing
-                                    </span>
-
-                                </div>
-
-
-                                <div class="workflow-item">
-
-                                    <span class="workflow-number">
-                                        03
-                                    </span>
-
-                                    <span class="workflow-text">
-                                        Services & Pricing
-                                    </span>
-
-                                </div>
-
-
-                                <div class="workflow-item">
-
-                                    <span class="workflow-number">
-                                        04
-                                    </span>
-
-                                    <span class="workflow-text">
-                                        Booking Flow
-                                    </span>
-
-                                </div>
-
-
-                                <div class="workflow-item">
-
-                                    <span class="workflow-number">
-                                        05
-                                    </span>
-
-                                    <span class="workflow-text">
-                                        UI & Usability
-                                    </span>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="project-result">
-
-                                <span class="project-result-label">
-                                    QA Focus
-                                </span>
-
-                                <p class="project-result-text">
-
-                                    Investigated location behaviour,
-                                    salon data, service availability,
-                                    pricing and booking-related issues
-                                    across the application experience.
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- =================================================
-                         PROJECT 04
-                    ================================================== -->
-
-                    <article class="project">
-
-                        <div class="project-index">
-                            04
-                        </div>
-
-
-                        <div class="project-main">
-
-                            <div class="project-top">
-
-                                <span class="project-category">
-                                    API / PERFORMANCE TESTING
-                                </span>
-
-                                <span class="project-status">
-                                    ANALYZED
-                                </span>
-
-                            </div>
-
-
-                            <h3>
-                                API PERFORMANCE<br>
-                                TESTING
-                            </h3>
-
-
-                            <p class="project-description">
-
-                                Performance testing focused on understanding
-                                how critical APIs behave as concurrency
-                                increases. Tests covered login, order and
-                                driver-assignment workflows using controlled
-                                load and ramp-up patterns.
-
-                            </p>
-
-
-                            <div class="project-focus">
-
-                                <span>
-                                    JMeter
-                                </span>
-
-                                <span>
-                                    Load Testing
-                                </span>
-
-                                <span>
-                                    Stress Testing
-                                </span>
-
-                                <span>
-                                    Response Time
-                                </span>
-
-                                <span>
-                                    Throughput
-                                </span>
-
-                                <span>
-                                    Bottleneck Analysis
-                                </span>
-
-                            </div>
-
-
-                            <div class="project-tools">
-
-                                <span class="project-tool">
-
-                                    <img
-                                        src="https://cdn.simpleicons.org/apachejmeter"
-                                        alt=""
-                                    >
-
-                                    Apache JMeter
-
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="project-side">
-
-                            <span class="project-side-label">
-                                Testing Process
-                            </span>
-
-
-                            <div class="project-workflow">
-
-                                <div class="workflow-item">
-
-                                    <span class="workflow-number">
-                                        01
-                                    </span>
-
-                                    <span class="workflow-text">
-                                        Baseline
-                                    </span>
-
-                                </div>
-
-
-                                <div class="workflow-item">
-
-                                    <span class="workflow-number">
-                                        02
-                                    </span>
-
-                                    <span class="workflow-text">
-                                        Gradual Ramp-Up
-                                    </span>
-
-                                </div>
-
-
-                                <div class="workflow-item">
-
-                                    <span class="workflow-number">
-                                        03
-                                    </span>
-
-                                    <span class="workflow-text">
-                                        Concurrent Load
-                                    </span>
-
-                                </div>
-
-
-                                <div class="workflow-item">
-
-                                    <span class="workflow-number">
-                                        04
-                                    </span>
-
-                                    <span class="workflow-text">
-                                        Response Analysis
-                                    </span>
-
-                                </div>
-
-
-                                <div class="workflow-item">
-
-                                    <span class="workflow-number">
-                                        05
-                                    </span>
-
-                                    <span class="workflow-text">
-                                        Bottleneck Identification
-                                    </span>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="project-result">
-
-                                <span class="project-result-label">
-                                    QA Focus
-                                </span>
-
-                                <p class="project-result-text">
-
-                                    Compared API behaviour under increasing
-                                    load and analyzed response-time patterns,
-                                    throughput and stability to identify
-                                    performance-sensitive workflows.
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             QA COVERAGE
-        ====================================================== -->
-
-        <section class="section">
-
-            <div class="container">
-
-                <div class="section-header reveal">
-
-                    <div class="section-number">
-                        05
-                    </div>
-
-                    <div>
-
-                        <p class="section-label">
-                            QA Coverage
-                        </p>
-
-                        <h2 class="section-title">
-
-                            Different systems.
-                            <span>
-                                Different ways to break them.
-                            </span>
-
-                        </h2>
-
-                    </div>
-
-                </div>
-
-
-                <div class="coverage-grid">
-
-                    <article class="coverage reveal">
-
-                        <div class="coverage-icon">
-                            <i data-lucide="layout-dashboard" width="18"></i>
-                        </div>
-
-                        <h3>
-                            Web Testing
-                        </h3>
-
-                        <p>
-                            Functional flows, UI behaviour, validations,
-                            navigation, regression and cross-feature
-                            interactions.
-                        </p>
-
-                    </article>
-
-
-                    <article class="coverage reveal">
-
-                        <div class="coverage-icon">
-                            <i data-lucide="smartphone" width="18"></i>
-                        </div>
-
-                        <h3>
-                            Mobile Testing
-                        </h3>
-
-                        <p>
-                            Android application workflows, usability,
-                            permissions, device behaviour and integration
-                            validation.
-                        </p>
-
-                    </article>
-
-
-                    <article class="coverage reveal">
-
-                        <div class="coverage-icon">
-                            <i data-lucide="send" width="18"></i>
-                        </div>
-
-                        <h3>
-                            API Testing
-                        </h3>
-
-                        <p>
-                            Request and response validation, status codes,
-                            authentication, JWT, RBAC and business rules.
-                        </p>
-
-                    </article>
-
-
-                    <article class="coverage reveal">
-
-                        <div class="coverage-icon">
-                            <i data-lucide="gauge" width="18"></i>
-                        </div>
-
-                        <h3>
-                            Performance
-                        </h3>
-
-                        <p>
-                            Load, stress and concurrency testing with
-                            response-time and throughput analysis.
-                        </p>
-
-                    </article>
-
-
-                    <article class="coverage reveal">
-
-                        <div class="coverage-icon">
-                            <i data-lucide="shield-check" width="18"></i>
-                        </div>
-
-                        <h3>
-                            Security
-                        </h3>
-
-                        <p>
-                            Authorization, JWT security, CORS, input
-                            validation and OWASP ZAP-based testing.
-                        </p>
-
-                    </article>
-
-
-                    <article class="coverage reveal">
-
-                        <div class="coverage-icon">
-                            <i data-lucide="bug" width="18"></i>
-                        </div>
-
-                        <h3>
-                            Defect Analysis
-                        </h3>
-
-                        <p>
-                            Reproduction, impact analysis, clear defect
-                            reporting, fix verification and regression.
-                        </p>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             CERTIFICATION
-        ====================================================== -->
-
-        <section
-            id="certification"
-            class="section"
-        >
-
-            <div class="container">
-
-                <div class="cert-grid">
-
-                    <div class="certificate-image reveal">
-
-                        <img
-                            src="images/emertxe-certificate.png"
-                            alt="Emertxe Embedded Systems Certificate"
-                        >
-
-                    </div>
-
-
-                    <div class="cert-content reveal">
-
-                        <p class="section-label">
-                            Certification
-                        </p>
-
-
-                        <h2 class="section-title">
-
-                            Embedded Systems
-                            <span>
-                                Engineering
-                            </span>
-
-                        </h2>
-
-
-                        <p class="cert-description">
-
-                            Completed an Embedded Systems training program
-                            at Emertxe Institute, building technical
-                            exposure to embedded development concepts,
-                            debugging and system-level thinking.
-
-                        </p>
-
-
-                        <div class="cert-meta">
-
-                            <div class="cert-meta-item">
-
-                                <span class="cert-meta-label">
-                                    Institution
-                                </span>
-
-                                <span class="cert-meta-value">
-                                    Emertxe Institute
-                                </span>
-
-                            </div>
-
-
-                            <div class="cert-meta-item">
-
-                                <span class="cert-meta-label">
-                                    Program
-                                </span>
-
-                                <span class="cert-meta-value">
-                                    Embedded Systems
-                                </span>
-
-                            </div>
-
-
-                            <div class="cert-meta-item">
-
-                                <span class="cert-meta-label">
-                                    Duration
-                                </span>
-
-                                <span class="cert-meta-value">
-                                    8 Months
-                                </span>
-
-                            </div>
-
-
-                            <div class="cert-meta-item">
-
-                                <span class="cert-meta-label">
-                                    Background
-                                </span>
-
-                                <span class="cert-meta-value">
-                                    Engineering
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             CONTACT
-        ====================================================== -->
-
-        <section
-            id="contact"
-            class="section contact-section"
-        >
-
-            <div class="container">
-
-                <div class="section-header reveal">
-
-                    <div class="section-number">
-                        06
-                    </div>
-
-                    <div>
-
-                        <p class="section-label">
-                            Contact
-                        </p>
-
-                        <h2 class="section-title">
-
-                            Let's build software
-                            <span>
-                                people can trust.
-                            </span>
-
-                        </h2>
-
-                    </div>
-
-                </div>
-
-
-                <div class="contact-grid">
-
-                    <div class="reveal">
-
-                        <p class="contact-text">
-
-                            I am open to QA Engineer opportunities where
-                            I can contribute to manual testing, API testing,
-                            automation, mobile testing, performance testing
-                            and security-focused quality engineering.
-
-                        </p>
-
-                    </div>
-
-
-                    <div class="contact-links reveal">
-
-                        <a
-                            href="mailto:veereshavanti19@gmail.com"
-                            class="contact-link"
-                        >
-
-                            <span class="contact-link-left">
-
-                                <i data-lucide="mail" width="18"></i>
-
-                                Email
-
-                            </span>
-
-                            <span>
-                                ↗
-                            </span>
-
-                        </a>
-
-
-                        <a
-                            href="tel:+917338484341"
-                            class="contact-link"
-                        >
-
-                            <span class="contact-link-left">
-
-                                <i data-lucide="phone" width="18"></i>
-
-                                Phone
-
-                            </span>
-
-                            <span>
-                                ↗
-                            </span>
-
-                        </a>
-
-
-                        <!-- Replace this URL with your actual https://www.linkedin.com/in/veeresh-avanti-590282283/ profile URL -->
-                        <a
-                            href="https://www.https://www.linkedin.com/in/veeresh-avanti-590282283/.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="contact-link"
-                        >
-
-                            <span class="contact-link-left">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/https://www.linkedin.com/in/veeresh-avanti-590282283//FFFFFF"
-                                    alt="https://www.linkedin.com/in/veeresh-avanti-590282283/"
-                                >
-
-                                https://www.linkedin.com/in/veeresh-avanti-590282283/
-
-                            </span>
-
-                            <span>
-                                ↗
-                            </span>
-
-                        </a>
-
-
-                        <a
-                            href="https://github.com/veereshavanti19-android"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="contact-link"
-                        >
-
-                            <span class="contact-link-left">
-
-                                <img
-                                    src="https://cdn.simpleicons.org/github/FFFFFF"
-                                    alt="GitHub"
-                                >
-
-                                GitHub
-
-                            </span>
-
-                            <span>
-                                ↗
-                            </span>
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- =========================================================
-         FOOTER
-    ========================================================== -->
-
-    <footer>
-
-        <div class="footer-inner">
-
-            <div class="footer-left">
-
-                © 2026 Veeresh Avanti
-
-            </div>
-
-
-            <div class="footer-right">
-
-                QA ENGINEER / SOFTWARE QUALITY
+                </h2>
 
             </div>
 
         </div>
 
-    </footer>
 
-</div>
+        <div class="approach-flow">
+
+            <div class="approach-card reveal">
+
+                <div class="approach-index">
+                    01 / UNDERSTAND
+                </div>
+
+                <h3>
+                    Understand
+                </h3>
+
+                <p>
+                    Understand the product workflow,
+                    requirements, user roles and business
+                    expectations before testing.
+                </p>
+
+            </div>
+
+
+            <div class="approach-card reveal">
+
+                <div class="approach-index">
+                    02 / ANALYZE
+                </div>
+
+                <h3>
+                    Analyze
+                </h3>
+
+                <p>
+                    Identify risk areas, dependencies,
+                    validations and scenarios where the
+                    system is most likely to fail.
+                </p>
+
+            </div>
+
+
+            <div class="approach-card reveal">
+
+                <div class="approach-index">
+                    03 / TEST
+                </div>
+
+                <h3>
+                    Test
+                </h3>
+
+                <p>
+                    Execute positive, negative, boundary,
+                    regression, API, mobile and
+                    exploratory scenarios.
+                </p>
+
+            </div>
+
+
+            <div class="approach-card reveal">
+
+                <div class="approach-index">
+                    04 / BREAK
+                </div>
+
+                <h3>
+                    Break
+                </h3>
+
+                <p>
+                    Challenge assumptions with invalid
+                    inputs, unauthorized actions,
+                    unexpected flows and edge cases.
+                </p>
+
+            </div>
+
+
+            <div class="approach-card reveal">
+
+                <div class="approach-index">
+                    05 / VERIFY
+                </div>
+
+                <h3>
+                    Verify
+                </h3>
+
+                <p>
+                    Retest fixes, validate impacted areas
+                    and confirm the final behaviour meets
+                    the expected outcome.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     TESTING STACK
+========================================================= -->
+
+<section class="section" id="stack">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <div class="section-number">
+                03
+            </div>
+
+            <div>
+
+                <p class="section-label">
+                    Testing Stack
+                </p>
+
+                <h2 class="section-title">
+
+                    Tools I use to
+
+                    <span>
+                        test deeper.
+                    </span>
+
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <p class="stack-intro reveal">
+
+            My testing workflow combines manual validation,
+            API testing, automation, mobile testing,
+            performance testing and security testing.
+
+        </p>
+
+
+        <div class="tool-grid">
+
+            <div class="tool reveal">
+
+                <img
+                    src="https://cdn.simpleicons.org/postman"
+                    alt="Postman"
+                >
+
+                <div>
+                    <div class="tool-name">
+                        Postman
+                    </div>
+
+                    <div class="tool-type">
+                        API Testing
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="tool reveal">
+
+                <img
+                    src="https://cdn.simpleicons.org/playwright"
+                    alt="Playwright"
+                >
+
+                <div>
+                    <div class="tool-name">
+                        Playwright
+                    </div>
+
+                    <div class="tool-type">
+                        Automation
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="tool reveal">
+
+                <img
+                    src="https://cdn.simpleicons.org/selenium"
+                    alt="Selenium"
+                >
+
+                <div>
+                    <div class="tool-name">
+                        Selenium
+                    </div>
+
+                    <div class="tool-type">
+                        Web Automation
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="tool reveal">
+
+                <img
+                    src="https://cdn.simpleicons.org/appium"
+                    alt="Appium"
+                >
+
+                <div>
+                    <div class="tool-name">
+                        Appium
+                    </div>
+
+                    <div class="tool-type">
+                        Mobile Testing
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="tool reveal">
+
+                <img
+                    src="https://cdn.simpleicons.org/apachejmeter"
+                    alt="JMeter"
+                >
+
+                <div>
+                    <div class="tool-name">
+                        JMeter
+                    </div>
+
+                    <div class="tool-type">
+                        Performance
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="tool reveal">
+
+                <img
+                    src="https://cdn.simpleicons.org/java"
+                    alt="Java"
+                >
+
+                <div>
+                    <div class="tool-name">
+                        Java
+                    </div>
+
+                    <div class="tool-type">
+                        Automation
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="tool reveal">
+
+                <img
+                    src="https://cdn.simpleicons.org/owasp"
+                    alt="OWASP ZAP"
+                >
+
+                <div>
+                    <div class="tool-name">
+                        OWASP ZAP
+                    </div>
+
+                    <div class="tool-type">
+                        Security Testing
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="tool reveal">
+
+                <img
+                    src="https://cdn.simpleicons.org/git"
+                    alt="Git"
+                >
+
+                <div>
+                    <div class="tool-name">
+                        Git
+                    </div>
+
+                    <div class="tool-type">
+                        Version Control
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="tool reveal">
+
+                <img
+                    src="https://cdn.simpleicons.org/github"
+                    alt="GitHub"
+                >
+
+                <div>
+                    <div class="tool-name">
+                        GitHub
+                    </div>
+
+                    <div class="tool-type">
+                        Collaboration
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="tool reveal">
+
+                <img
+                    src="https://cdn.simpleicons.org/androidstudio"
+                    alt="Android Studio"
+                >
+
+                <div>
+                    <div class="tool-name">
+                        Android Studio
+                    </div>
+
+                    <div class="tool-type">
+                        Mobile Testing
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="tool reveal">
+
+                <i
+                    data-lucide="database"
+                    style="width:34px;height:34px"
+                ></i>
+
+                <div>
+                    <div class="tool-name">
+                        SQL
+                    </div>
+
+                    <div class="tool-type">
+                        Data Validation
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section class="section projects-section" id="projects">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <div class="section-number">
+                04
+            </div>
+
+            <div>
+
+                <p class="section-label">
+                    Selected Projects
+                </p>
+
+                <h2 class="section-title">
+
+                    Real workflows.
+
+                    <span>
+                        Real QA thinking.
+                    </span>
+
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <p class="projects-intro reveal">
+
+            Instead of simply listing projects, these case studies
+            show the workflows I tested, the risks I investigated
+            and the tools used to validate the product.
+
+        </p>
+
+
+        <div class="projects-list">
+
+
+            <!-- PROJECT 01 -->
+
+            <article class="project reveal">
+
+                <div class="project-index">
+                    01
+                </div>
+
+
+                <div class="project-main">
+
+                    <div class="project-tag">
+                        Logistics / Delivery Platform
+                    </div>
+
+                    <h3 class="project-title">
+                        Nikkou Porter
+                    </h3>
+
+                    <p class="project-description">
+
+                        A logistics and parcel-delivery platform
+                        connecting customers, drivers and
+                        administrators. Testing focused on
+                        validating the complete ride lifecycle
+                        from customer order creation through
+                        driver assignment, delivery and payment
+                        workflows.
+
+                    </p>
+
+
+                    <div class="project-flow">
+
+                        Customer
+                        <span>→</span>
+                        API
+                        <span>→</span>
+                        Driver
+                        <span>→</span>
+                        Delivery
+                        <span>→</span>
+                        Payment
+
+                    </div>
+
+
+                    <div class="project-tools">
+
+                        <span class="project-tool">
+                            Postman
+                        </span>
+
+                        <span class="project-tool">
+                            JMeter
+                        </span>
+
+                        <span class="project-tool">
+                            OWASP ZAP
+                        </span>
+
+                        <span class="project-tool">
+                            API Testing
+                        </span>
+
+                        <span class="project-tool">
+                            RBAC
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-side">
+
+                    <div class="project-side-label">
+                        QA Focus
+                    </div>
+
+                    <h4>
+                        What I tested
+                    </h4>
+
+
+                    <div class="project-checks">
+
+                        <div class="project-check">
+                            Customer order creation and validation
+                        </div>
+
+                        <div class="project-check">
+                            Driver assignment and ride lifecycle
+                        </div>
+
+                        <div class="project-check">
+                            KYC and document verification workflows
+                        </div>
+
+                        <div class="project-check">
+                            Wallet, commission and payment scenarios
+                        </div>
+
+                        <div class="project-check">
+                            Role-based access restrictions
+                        </div>
+
+                        <div class="project-check">
+                            API performance under load
+                        </div>
+
+                        <div class="project-check">
+                            Security and input validation
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-result">
+                        API + Functional + Performance + Security
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 02 -->
+
+            <article class="project reveal">
+
+                <div class="project-index">
+                    02
+                </div>
+
+
+                <div class="project-main">
+
+                    <div class="project-tag">
+                        Sports Technology Platform
+                    </div>
+
+                    <h3 class="project-title">
+                        Master My Sports
+                    </h3>
+
+                    <p class="project-description">
+
+                        An all-in-one sports technology platform
+                        covering venues, coaches, referees,
+                        academies, clubs, bookings, tournaments,
+                        memberships and live sports workflows.
+                        Testing covered multiple user roles and
+                        interconnected business processes.
+
+                    </p>
+
+
+                    <div class="project-flow">
+
+                        Vendor
+                        <span>→</span>
+                        Venue
+                        <span>→</span>
+                        Booking
+                        <span>→</span>
+                        Player
+                        <span>→</span>
+                        Sports Workflow
+
+                    </div>
+
+
+                    <div class="project-tools">
+
+                        <span class="project-tool">
+                            Manual Testing
+                        </span>
+
+                        <span class="project-tool">
+                            API Testing
+                        </span>
+
+                        <span class="project-tool">
+                            RBAC
+                        </span>
+
+                        <span class="project-tool">
+                            Security
+                        </span>
+
+                        <span class="project-tool">
+                            Mobile
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-side">
+
+                    <div class="project-side-label">
+                        QA Focus
+                    </div>
+
+                    <h4>
+                        What I tested
+                    </h4>
+
+
+                    <div class="project-checks">
+
+                        <div class="project-check">
+                            Vendor onboarding and validation
+                        </div>
+
+                        <div class="project-check">
+                            Venue and court management
+                        </div>
+
+                        <div class="project-check">
+                            Booking and tournament workflows
+                        </div>
+
+                        <div class="project-check">
+                            Vendor, coach, referee and player roles
+                        </div>
+
+                        <div class="project-check">
+                            API validation and negative scenarios
+                        </div>
+
+                        <div class="project-check">
+                            Unauthorized access testing
+                        </div>
+
+                        <div class="project-check">
+                            Security and usability validation
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-result">
+                        Web + Mobile + API + Security
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 03 -->
+
+            <article class="project reveal">
+
+                <div class="project-index">
+                    03
+                </div>
+
+
+                <div class="project-main">
+
+                    <div class="project-tag">
+                        Mobile Application
+                    </div>
+
+                    <h3 class="project-title">
+                        Cherry Salon
+                    </h3>
+
+                    <p class="project-description">
+
+                        A salon discovery and booking application
+                        where users can discover nearby salons,
+                        review available services, compare pricing
+                        and proceed with appointment booking.
+                        Testing focused on location-based
+                        discovery and the complete booking journey.
+
+                    </p>
+
+
+                    <div class="project-flow">
+
+                        Location
+                        <span>→</span>
+                        Salon
+                        <span>→</span>
+                        Services
+                        <span>→</span>
+                        Pricing
+                        <span>→</span>
+                        Booking
+
+                    </div>
+
+
+                    <div class="project-tools">
+
+                        <span class="project-tool">
+                            Mobile Testing
+                        </span>
+
+                        <span class="project-tool">
+                            Functional
+                        </span>
+
+                        <span class="project-tool">
+                            Maps
+                        </span>
+
+                        <span class="project-tool">
+                            Regression
+                        </span>
+
+                        <span class="project-tool">
+                            Usability
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-side">
+
+                    <div class="project-side-label">
+                        QA Focus
+                    </div>
+
+                    <h4>
+                        What I tested
+                    </h4>
+
+
+                    <div class="project-checks">
+
+                        <div class="project-check">
+                            Location and nearby salon discovery
+                        </div>
+
+                        <div class="project-check">
+                            Salon details and contact information
+                        </div>
+
+                        <div class="project-check">
+                            Service availability and pricing
+                        </div>
+
+                        <div class="project-check">
+                            Discount calculation and display
+                        </div>
+
+                        <div class="project-check">
+                            Booking workflow and validations
+                        </div>
+
+                        <div class="project-check">
+                            Map behaviour and usability
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-result">
+                        Mobile + Functional + Usability
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 04 -->
+
+            <article class="project reveal">
+
+                <div class="project-index">
+                    04
+                </div>
+
+
+                <div class="project-main">
+
+                    <div class="project-tag">
+                        Performance Engineering
+                    </div>
+
+                    <h3 class="project-title">
+                        API Performance Testing
+                    </h3>
+
+                    <p class="project-description">
+
+                        Performance testing focused on identifying
+                        how critical APIs behave under increasing
+                        traffic. Tests were structured around
+                        baseline behaviour, gradual load,
+                        concurrent requests, response analysis
+                        and bottleneck identification.
+
+                    </p>
+
+
+                    <div class="project-flow">
+
+                        Baseline
+                        <span>→</span>
+                        Ramp-up
+                        <span>→</span>
+                        Load
+                        <span>→</span>
+                        Stress
+                        <span>→</span>
+                        Analysis
+
+                    </div>
+
+
+                    <div class="project-tools">
+
+                        <span class="project-tool">
+                            JMeter
+                        </span>
+
+                        <span class="project-tool">
+                            API Testing
+                        </span>
+
+                        <span class="project-tool">
+                            Load Testing
+                        </span>
+
+                        <span class="project-tool">
+                            Stress Testing
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-side">
+
+                    <div class="project-side-label">
+                        QA Focus
+                    </div>
+
+                    <h4>
+                        What I tested
+                    </h4>
+
+
+                    <div class="project-checks">
+
+                        <div class="project-check">
+                            Login API response behaviour
+                        </div>
+
+                        <div class="project-check">
+                            Order API under increasing traffic
+                        </div>
+
+                        <div class="project-check">
+                            Driver Assignment API
+                        </div>
+
+                        <div class="project-check">
+                            Gradual ramp-up and concurrent load
+                        </div>
+
+                        <div class="project-check">
+                            Response time analysis
+                        </div>
+
+                        <div class="project-check">
+                            Bottleneck identification
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-result">
+                        Load + Stress + Response Analysis
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     QA COVERAGE
+========================================================= -->
+
+<section class="section" id="coverage">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <div class="section-number">
+                05
+            </div>
+
+            <div>
+
+                <p class="section-label">
+                    QA Coverage
+                </p>
+
+                <h2 class="section-title">
+
+                    Testing beyond
+
+                    <span>
+                        the happy path.
+                    </span>
+
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="coverage-grid">
+
+            <div class="coverage-card reveal">
+
+                <div class="coverage-number">
+                    01
+                </div>
+
+                <h3>
+                    Web Testing
+                </h3>
+
+                <p>
+                    Functional, regression, smoke, sanity,
+                    exploratory and cross-workflow validation
+                    for web applications.
+                </p>
+
+            </div>
+
+
+            <div class="coverage-card reveal">
+
+                <div class="coverage-number">
+                    02
+                </div>
+
+                <h3>
+                    Mobile Testing
+                </h3>
+
+                <p>
+                    Android application testing covering
+                    workflows, UI behaviour, usability,
+                    navigation and edge cases.
+                </p>
+
+            </div>
+
+
+            <div class="coverage-card reveal">
+
+                <div class="coverage-number">
+                    03
+                </div>
+
+                <h3>
+                    API Testing
+                </h3>
+
+                <p>
+                    REST API validation, status codes,
+                    payloads, JWT authentication,
+                    authorization and negative scenarios.
+                </p>
+
+            </div>
+
+
+            <div class="coverage-card reveal">
+
+                <div class="coverage-number">
+                    04
+                </div>
+
+                <h3>
+                    Performance
+                </h3>
+
+                <p>
+                    Load and stress testing with response-time
+                    analysis, ramp-up strategies and
+                    bottleneck investigation.
+                </p>
+
+            </div>
+
+
+            <div class="coverage-card reveal">
+
+                <div class="coverage-number">
+                    05
+                </div>
+
+                <h3>
+                    Security
+                </h3>
+
+                <p>
+                    JWT security, RBAC, input validation,
+                    CORS behaviour and common application
+                    security checks.
+                </p>
+
+            </div>
+
+
+            <div class="coverage-card reveal">
+
+                <div class="coverage-number">
+                    06
+                </div>
+
+                <h3>
+                    Defect Analysis
+                </h3>
+
+                <p>
+                    Reproduction, evidence collection,
+                    impact analysis, retesting and
+                    regression validation.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CERTIFICATION
+========================================================= -->
+
+<section class="section certificate-section" id="certification">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <div class="section-number">
+                06
+            </div>
+
+            <div>
+
+                <p class="section-label">
+                    Certification
+                </p>
+
+                <h2 class="section-title">
+
+                    Continuous learning.
+
+                    <span>
+                        Practical testing.
+                    </span>
+
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="certificate-layout">
+
+            <div class="certificate-copy reveal">
+
+                <h3>
+                    Embedded Systems
+                    Certification
+                </h3>
+
+                <p>
+
+                    Completed an Embedded Systems course at
+                    Emertxe Institute, building a foundation
+                    in embedded software and system-level
+                    technical concepts.
+
+                </p>
+
+            </div>
+
+
+            <div class="certificate-frame reveal">
+
+                <img
+                    src="images/emertxe-certificate.png"
+                    alt="Veeresh Avanti Emertxe Certificate"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section class="section contact-section" id="contact">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <div class="section-number">
+                07
+            </div>
+
+            <div>
+
+                <p class="section-label">
+                    Contact
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <h2 class="contact-title reveal">
+
+            Let's build
+            better software.
+
+        </h2>
+
+
+        <p class="contact-description reveal">
+
+            Looking for a QA Engineer who can think beyond
+            test cases and investigate how a product behaves
+            under real-world conditions?
+
+            Let's connect.
+
+        </p>
+
+
+        <div class="contact-actions reveal">
+
+            <a
+                href="mailto:veereshavanti19@gmail.com"
+                class="contact-button"
+            >
+                <i data-lucide="mail"></i>
+                Email Me
+            </a>
+
+
+            <a
+                href="tel:+917338484341"
+                class="contact-button"
+            >
+                <i data-lucide="phone"></i>
+                +91 73384 84341
+            </a>
+
+
+            <a
+                href="https://www.linkedin.com/in/veeresh-avanti-590282283/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-button"
+            >
+
+                <img
+                    class="linkedin-icon"
+                    src="https://cdn.simpleicons.org/linkedin/0A66C2"
+                    alt="LinkedIn"
+                >
+
+                LinkedIn
+
+            </a>
+
+
+            <a
+                href="https://github.com/veereshavanti19-android"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-button"
+            >
+                <i data-lucide="github"></i>
+                GitHub
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div class="container footer-inner">
+
+        <div class="footer-text">
+            © 2026 Veeresh Avanti / QA Engineer
+        </div>
+
+
+        <div class="footer-links">
+
+            <a
+                href="#home"
+                class="footer-link"
+            >
+                Back to Top ↑
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/veeresh-avanti-590282283/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-link"
+            >
+                LinkedIn
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
 
 
 
 <!-- =========================================================
      JAVASCRIPT
-========================================================== -->
+========================================================= -->
 
 <script>
 
-    /* ---------------------------------------------------------
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* -----------------------------------------
        LUCIDE ICONS
-    ---------------------------------------------------------- */
+    ----------------------------------------- */
 
-    document.addEventListener("DOMContentLoaded", function () {
-
-        if (window.lucide) {
-            lucide.createIcons();
-        }
-
-    });
+    if (window.lucide) {
+        lucide.createIcons();
+    }
 
 
-    /* ---------------------------------------------------------
-       REVEAL ANIMATION
-    ---------------------------------------------------------- */
+    /* -----------------------------------------
+       REVEAL ANIMATIONS
+    ----------------------------------------- */
 
-    const revealElements =
+    const revealItems =
         document.querySelectorAll(".reveal");
 
 
     const revealObserver =
         new IntersectionObserver(
+            (entries, observer) => {
 
-            function (entries) {
-
-                entries.forEach(function (entry) {
+                entries.forEach(entry => {
 
                     if (entry.isIntersecting) {
 
                         entry.target.classList.add("visible");
 
-                        revealObserver.unobserve(
-                            entry.target
-                        );
+                        observer.unobserve(entry.target);
 
                     }
 
                 });
 
             },
-
             {
                 threshold: 0.12
             }
-
         );
 
 
-    revealElements.forEach(function (element) {
+    revealItems.forEach(item => {
 
-        revealObserver.observe(element);
+        revealObserver.observe(item);
 
     });
 
 
-    /* ---------------------------------------------------------
-       PROJECT ANIMATION
-       Projects are the main animated section.
-    ---------------------------------------------------------- */
+    /* -----------------------------------------
+       MOBILE NAVIGATION
+    ----------------------------------------- */
 
-    const projects =
-        document.querySelectorAll(".project");
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+    const navLinks =
+        document.getElementById("navLinks");
 
 
-    const projectObserver =
-        new IntersectionObserver(
+    if (mobileMenu && navLinks) {
 
-            function (entries) {
+        mobileMenu.addEventListener("click", () => {
 
-                entries.forEach(function (entry) {
+            navLinks.classList.toggle("open");
 
-                    if (entry.isIntersecting) {
+        });
 
-                        entry.target.classList.add(
-                            "project-visible"
-                        );
 
-                        projectObserver.unobserve(
-                            entry.target
-                        );
+        navLinks
+            .querySelectorAll("a")
+            .forEach(link => {
 
-                    }
+                link.addEventListener("click", () => {
+
+                    navLinks.classList.remove("open");
 
                 });
 
-            },
-
-            {
-                threshold: 0.18
-            }
-
-        );
-
-
-    projects.forEach(function (project) {
-
-        projectObserver.observe(project);
-
-    });
-
-
-    /* ---------------------------------------------------------
-       MOBILE MENU
-    ---------------------------------------------------------- */
-
-    const mobileButton =
-        document.querySelector(".mobile-menu");
-
-
-    const navLinks =
-        document.querySelector(".nav-links");
-
-
-    if (mobileButton) {
-
-        mobileButton.addEventListener(
-            "click",
-            function () {
-
-                const links =
-                    document.querySelector(".nav-links");
-
-                if (
-                    links.style.display === "flex"
-                ) {
-
-                    links.style.display = "";
-
-                } else {
-
-                    links.style.display = "flex";
-
-                    links.style.position = "absolute";
-                    links.style.top = "68px";
-                    links.style.left = "16px";
-                    links.style.right = "16px";
-
-                    links.style.flexDirection = "column";
-                    links.style.alignItems = "flex-start";
-
-                    links.style.padding = "22px";
-
-                    links.style.background =
-                        "rgba(245,242,236,0.98)";
-
-                    links.style.border =
-                        "1px solid #d8d3ca";
-
-                    links.style.gap = "20px";
-
-                }
-
-            }
-        );
+            });
 
     }
 
 
-    /* ---------------------------------------------------------
-       CLOSE MOBILE MENU AFTER CLICK
-    ---------------------------------------------------------- */
+    /* -----------------------------------------
+       PROJECT HOVER DEPTH
+    ----------------------------------------- */
 
     document
-        .querySelectorAll(".nav-link")
-        .forEach(function (link) {
+        .querySelectorAll(".project")
+        .forEach(project => {
 
-            link.addEventListener(
-                "click",
-                function () {
+            project.addEventListener(
+                "mousemove",
+                event => {
 
-                    if (
-                        window.innerWidth <= 780 &&
-                        navLinks
-                    ) {
-
-                        navLinks.style.display = "";
-
+                    if (window.innerWidth < 900) {
+                        return;
                     }
+
+                    const rect =
+                        project.getBoundingClientRect();
+
+                    const x =
+                        (event.clientX - rect.left)
+                        / rect.width;
+
+                    const y =
+                        (event.clientY - rect.top)
+                        / rect.height;
+
+                    const rotateX =
+                        (0.5 - y) * 2;
+
+                    const rotateY =
+                        (x - 0.5) * 2;
+
+                    project.style.transform =
+                        `translateY(-6px)
+                         perspective(1000px)
+                         rotateX(${rotateX}deg)
+                         rotateY(${rotateY}deg)`;
+
+                }
+            );
+
+
+            project.addEventListener(
+                "mouseleave",
+                () => {
+
+                    project.style.transform = "";
 
                 }
             );
 
         });
+
+
+    /* -----------------------------------------
+       ACTIVE NAV LINK
+    ----------------------------------------- */
+
+    const sections =
+        document.querySelectorAll("section[id]");
+
+    const navItems =
+        document.querySelectorAll(".nav-link");
+
+
+    const sectionObserver =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        navItems.forEach(link => {
+
+                            link.style.color = "";
+
+                        });
+
+
+                        const active =
+                            document.querySelector(
+                                `.nav-link[href="#${entry.target.id}"]`
+                            );
+
+
+                        if (active) {
+
+                            active.style.color =
+                                "var(--ink)";
+
+                        }
+
+                    }
+
+                });
+
+            },
+            {
+                rootMargin: "-35% 0px -55% 0px"
+            }
+        );
+
+
+    sections.forEach(section => {
+
+        sectionObserver.observe(section);
+
+    });
+
+});
 
 </script>
 
